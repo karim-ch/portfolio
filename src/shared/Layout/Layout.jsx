@@ -25,7 +25,7 @@ const Layout = ({ children, className }) => {
         <script src={withPrefix("script.js")} type="text/javascript" />
       </Helmet>
       <div className={className}>
-        <Navbar />
+        {/*<Navbar />*/}
         <Main>{children}</Main>
         <Footer />
       </div>

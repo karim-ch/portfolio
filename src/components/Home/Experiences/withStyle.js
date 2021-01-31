@@ -11,7 +11,7 @@ export default component => styled(component)`
       display: block;
       position: relative;
       top: 5px;
-      width: 300px;
+      width: 30vw;
       height: 1px;
       margin-left: 20px;
       background-color: ${themeGet("colors.lightestNavy")};
