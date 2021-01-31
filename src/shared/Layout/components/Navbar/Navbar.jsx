@@ -6,12 +6,10 @@ import { Link } from "gatsby"
 import { useScrollContext } from "shared/ScrollContext"
 
 const Navbar = ({ className }) => {
-  const {
-    filters: { page },
-  } = useScrollContext()
+  const { filters } = useScrollContext()
   const { name: themeName, setTheme } = useTheme()
 
-  const isElemFocused = section => page === section
+  const isElemFocused = section => filters?.page === section
 
   return (
     <header className={className}>
