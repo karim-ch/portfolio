@@ -1,11 +1,16 @@
-import React, { createRef, useEffect } from "react"
+import React, { createRef, useCallback, useEffect } from "react"
 import withStyle from "./withStyle"
 import AboutMe from "./AboutMe"
 import Experiences from "./Experiences"
 import Me from "./Me"
 import Contact from "./Contact"
+import Projects from "./Projects/Projects"
+import VizSensor from "react-visibility-sensor"
+import { useScrollContext } from "shared/ScrollContext"
 
 const Home = ({ pathname, className }) => {
+  const { setFilter } = useScrollContext()
+
   const sections = [
     {
       sectionName: "/about",
@@ -14,6 +19,10 @@ const Home = ({ pathname, className }) => {
     {
       sectionName: "/experiences",
       Component: Experiences,
+    },
+    {
+      sectionName: "/projects",
+      Component: Projects,
     },
     {
       sectionName: "/contact",
@@ -37,15 +46,25 @@ const Home = ({ pathname, className }) => {
         block: "start",
       })
     }
-  }, [focusedSection, refs])
+  }, [focusedSection])
+
+  const setPage = useCallback(setFilter("page"))
 
   return (
     <div className={className}>
       <Me />
       {sections.map(({ sectionName, Component }) => {
         return (
-          <div ref={refs[sectionName]} key={sectionName}>
-            <Component />
+          <div
+            style={{ scrollMarginTop: "110px" }}
+            ref={refs[sectionName]}
+            key={sectionName}
+          >
+            <VizSensor
+              onChange={isVisible => isVisible && setPage(sectionName)}
+            >
+              <Component />
+            </VizSensor>
           </div>
         )
       })}

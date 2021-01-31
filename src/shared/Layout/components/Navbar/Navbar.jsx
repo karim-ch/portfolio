@@ -3,9 +3,15 @@ import { useTheme } from "theme"
 import Toggle from "./components/Toggle"
 import withStyle from "./withStyle"
 import { Link } from "gatsby"
+import { useScrollContext } from "shared/ScrollContext"
 
 const Navbar = ({ className }) => {
+  const {
+    filters: { page },
+  } = useScrollContext()
   const { name: themeName, setTheme } = useTheme()
+
+  const isElemFocused = section => page === section
 
   return (
     <header className={className}>
@@ -21,16 +27,18 @@ const Navbar = ({ className }) => {
           checked={themeName === "dark"}
         />
         <Link to="/about">
-          <li>About</li>
+          <li className={isElemFocused("/about") && "active"}>About</li>
         </Link>
         <Link to="/experiences">
-          <li>Experience</li>
+          <li className={isElemFocused("/experiences") && "active"}>
+            Experience
+          </li>
         </Link>
-        <Link to="/education">
-          <li>Education</li>
+        <Link to="/projects">
+          <li className={isElemFocused("/projects") && "active"}>Projects</li>
         </Link>
         <Link to="/contact">
-          <li>Contact</li>
+          <li className={isElemFocused("/contact") && "active"}>Contact</li>
         </Link>
         <li className="resume-btn">Resume</li>
       </ul>

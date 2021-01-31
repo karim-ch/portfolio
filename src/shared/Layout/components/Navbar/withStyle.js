@@ -11,6 +11,10 @@ export default component => styled(component)`
   align-items: center;
   color: var(--lightest-slate);
   font-family: var(--font-mono);
+  position: sticky;
+  background-color: ${themeGet("colors.navy")};
+  top: 0;
+  z-index: 2;
 
   .logo {
     padding: 0 30px;
@@ -18,6 +22,10 @@ export default component => styled(component)`
     color: ${themeGet("colors.green")};
     font-size: 24px;
     font-family: var(--font-sans);
+  }
+
+  .active {
+    color: ${themeGet("colors.green")};
   }
 
   .sections {
@@ -32,6 +40,7 @@ export default component => styled(component)`
         color: ${themeGet("colors.green")};
       }
       text-decoration: none;
+      font-size: 13px;
     }
 
     .resume-btn {

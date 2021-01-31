@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "shared/Layout"
 import SEO from "shared/Layout/components/SEO"
 import Home from "components/Home"
+import { withScrollContext } from "shared/ScrollContext"
 
 const IndexPage = ({ location }) => {
   const { pathname } = location
@@ -14,4 +15,4 @@ const IndexPage = ({ location }) => {
   )
 }
 
-export default IndexPage
+export default withScrollContext({ initials: { page: "/about" } })(IndexPage)

@@ -28,6 +28,7 @@ export default component => styled(component)`
       width: 27%;
       object-fit: cover;
       border-radius: 3px;
+      max-height: 240px;
     }
 
     .text-container {
