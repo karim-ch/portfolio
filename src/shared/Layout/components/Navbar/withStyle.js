@@ -12,6 +12,14 @@ export default component => styled(component)`
   color: var(--lightest-slate);
   font-family: var(--font-mono);
 
+  .logo {
+    padding: 0 30px;
+    font-weight: bold;
+    color: ${themeGet("colors.green")};
+    font-size: 24px;
+    font-family: var(--font-sans);
+  }
+
   .sections {
     display: flex;
     align-items: center;
@@ -28,7 +36,7 @@ export default component => styled(component)`
 
     .resume-btn {
       border: 1px solid ${themeGet("colors.green")};
-      color: 1px solid ${themeGet("colors.green")};
+      color: ${themeGet("colors.green")};
       padding: 10px;
       border-radius: 4px;
       &:hover {

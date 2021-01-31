@@ -35,6 +35,23 @@ export default component => styled(component)`
     }
   }
 
+  @media (max-width: ${themeGet("devices.sizes.medium")}px) {
+    .about {
+      display: flex;
+      flex-direction: column;
+
+      .pic {
+        width: 27%;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+
+      .text-container {
+        width: 100%;
+      }
+    }
+  }
+
   ul.skills-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));

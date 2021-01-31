@@ -9,7 +9,7 @@ const Navbar = ({ className }) => {
 
   return (
     <header className={className}>
-      <span>K</span>
+      <span className="logo">Karim</span>
 
       <ul className="sections">
         <Toggle

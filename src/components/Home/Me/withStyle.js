@@ -3,7 +3,7 @@ import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
   margin-top: 22vh;
-  height: 50vh;
+  min-height: 50vh;
   max-width: 900px;
 
   .welcome {
