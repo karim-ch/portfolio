@@ -1,16 +1,29 @@
 import React from "react"
-import withStyle from "./withStyle"
+import { RichText } from "prismic-reactjs"
 
-const AboutMe = ({ className }) => {
+import withStyle from "./withStyle"
+import useAbout from "./useAbout"
+
+const About = ({ className }) => {
+  const { introduction, skills, pic } = useAbout()
+  const mySkills = skills.map(({ skill }) => skill[0].text)
+
   return (
-    <div
-      className={className}
-      style={{ border: "solid 1px blue", width: "100%", height: "800px" }}
-    >
-      <h1> AAAAAAAAAAA </h1>
-      <h2> AAAAAAAAAAA </h2>
-    </div>
+    <section className={className}>
+      <h2 className="heading">About Me</h2>
+      <div className="about">
+        <div className="text-container">
+          <RichText render={introduction} />
+          <p>Here are a few technologies I've been working with recently:</p>
+        </div>
+
+        <img loading="lazy" className="pic" src={pic?.url} alt={pic?.alt} />
+      </div>
+      <ul className="skills-list">
+        {mySkills && mySkills.map((skill, i) => <li key={i}>{skill}</li>)}
+      </ul>
+    </section>
   )
 }
 
-export default withStyle(AboutMe)
+export default withStyle(About)

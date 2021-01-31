@@ -63,39 +63,43 @@ module.exports = {
         repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
         schemas: {
-          article: {
-            Main: {
-              title: {
-                type: "StructuredText",
-                config: {
-                  single:
-                    "heading1, heading2, heading3, heading4, heading5, heading6",
-                  label: "title",
-                },
+          header: {
+            introduction: {
+              type: "StructuredText",
+              config: {
+                multi:
+                  "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                label: "introduction",
               },
-              image: {
-                type: "Image",
-                config: {
-                  constraint: {},
-                  thumbnails: [],
-                  label: "image",
-                },
+            },
+            pic: {
+              type: "Image",
+              config: {
+                constraint: {},
+                thumbnails: [],
+                label: "pic",
               },
-              paragraph: {
-                type: "StructuredText",
-                config: {
-                  multi:
-                    "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-                  label: "paragraph",
+            },
+            skills: {
+              type: "Group",
+              config: {
+                fields: {
+                  skill: {
+                    type: "StructuredText",
+                    config: {
+                      multi: "list-item",
+                      label: "skill",
+                    },
+                  },
                 },
+                label: "skills",
               },
             },
           },
         },
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
+    `gatsby-plugin-offline`,
   ],
 }

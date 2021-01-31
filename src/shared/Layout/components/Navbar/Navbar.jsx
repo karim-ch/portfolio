@@ -1,34 +1,17 @@
 import React from "react"
 import { useTheme } from "theme"
 import Toggle from "./components/Toggle"
+import withStyle from "./withStyle"
 import { Link } from "gatsby"
 
-const Navbar = ({ siteTitle }) => {
+const Navbar = ({ className }) => {
   const { name: themeName, setTheme } = useTheme()
 
   return (
-    <header
-      style={{
-        background: `rebeccapurple`,
-      }}
-    >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
-        <Link
-          to="/blog"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+    <header className={className}>
+      <span>K</span>
 
+      <ul className="sections">
         <Toggle
           onClick={() =>
             setTheme({
@@ -37,9 +20,22 @@ const Navbar = ({ siteTitle }) => {
           }
           checked={themeName === "dark"}
         />
-      </div>
+        <Link to="/about">
+          <li>About</li>
+        </Link>
+        <Link to="/experiences">
+          <li>Experience</li>
+        </Link>
+        <Link to="/education">
+          <li>Education</li>
+        </Link>
+        <Link to="/contact">
+          <li>Contact</li>
+        </Link>
+        <li className="resume-btn">Resume</li>
+      </ul>
     </header>
   )
 }
 
-export default Navbar
+export default withStyle(Navbar)

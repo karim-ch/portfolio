@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
   position: relative;
@@ -28,7 +29,7 @@ export default component => styled(component)`
     left: 0;
     overflow: hidden;
     opacity: 1;
-    background-color: #fff;
+    background-color: ${themeGet("colors.lightestSlate")};
     border-radius: 40px;
     transition: 0.2s ease background-color, 0.2s ease opacity;
   }
@@ -45,7 +46,7 @@ export default component => styled(component)`
   }
 
   span:before {
-    background-color: #fff;
+    background-color: ${themeGet("colors.lightestSlate")};
     transform: translate(-11px, 0px);
     z-index: 1;
   }
@@ -70,7 +71,7 @@ export default component => styled(component)`
   }
 
   input[type="checkbox"]:checked + span:after {
-    background-color: #fff;
+    background-color: ${themeGet("colors.lightestSlate")};
     transform: translate(11px, 0px);
   }
 `

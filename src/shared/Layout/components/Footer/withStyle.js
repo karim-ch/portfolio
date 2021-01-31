@@ -1,6 +1,8 @@
 import styled from "styled-components"
-import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
-  padding: 0 20%;
+  text-align: center;
+  text-align: -webkit-center;
+  width: 100%;
+  height: 60px;
 `

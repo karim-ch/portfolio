@@ -5,6 +5,7 @@ import Home from "components/Home"
 
 const IndexPage = ({ location }) => {
   const { pathname } = location
+
   return (
     <Layout>
       <SEO title="Home" />

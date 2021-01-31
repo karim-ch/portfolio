@@ -1,5 +1,4 @@
 import { css } from "styled-components"
-import themeGet from "@styled-system/theme-get"
 
 export default css`
   html,
@@ -85,9 +84,6 @@ export default css`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font-family: ${themeGet("fontFamilies.secondary")};
-    font: inherit;
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */

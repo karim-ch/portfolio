@@ -7,17 +7,17 @@ import Footer from "./components/Footer"
 import Main from "./components/Main"
 
 const Layout = ({ children, className }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
+  //
+  // const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
     <ThemeProvider>
@@ -25,7 +25,7 @@ const Layout = ({ children, className }) => {
         <script src={withPrefix("script.js")} type="text/javascript" />
       </Helmet>
       <div className={className}>
-        <Navbar siteTitle={siteTitle} />
+        <Navbar />
         <Main>{children}</Main>
         <Footer />
       </div>

@@ -17,9 +17,6 @@ const useThemeState = createPersistedState("theme")
 
 const defaults = {
   name: "dark",
-  sideBarOpened: true,
-  searchBarOpened: false,
-  switchBarOpened: false,
 }
 
 const ThemeProvider = ({ children, defaultTheme }) => {

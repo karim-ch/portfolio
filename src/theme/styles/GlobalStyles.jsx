@@ -2,7 +2,6 @@ import { memo } from "react"
 import { createGlobalStyle } from "styled-components"
 import themeGet from "@styled-system/theme-get"
 import Fonts from "./fonts"
-
 import reset from "./reset"
 import scrollbar from "./scrollbar"
 
@@ -13,7 +12,8 @@ const globalStyles = createGlobalStyle`
 
   :root {
     position: relative;
-    background-color: ${themeGet("colors.white")};
+    background-color: ${themeGet("colors.navy")};
+    
     --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
@@ -32,6 +32,10 @@ const globalStyles = createGlobalStyle`
     width: 100%;
   }
 
+  button {
+    outline: none;
+  }
+  
   body {
     margin: 0;
     width: 100%;
@@ -39,12 +43,42 @@ const globalStyles = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: var(--font-sans);
-    font-size: var(--fz-xl);
+    color:  ${themeGet("colors.slate")};
+    font-family: var(--font-sans); 
+    font-size: var(--fz-md);
     line-height: 1.3;
 
     @media (max-width: 480px) {
       font-size: var(--fz-lg);
+    }
+  }
+  
+  section {
+    .heading {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin: 10px 0 40px;
+      width: fit-content;
+      font-size: clamp(26px, 5vw, var(--fz-heading));
+      white-space: nowrap;
+      color: ${themeGet("colors.lightestSlate")};
+
+    }
+     p {
+      margin: 0 0 15px 0;
+      &:last-child,
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+    
+    a {
+      text-decoration: none;
+      color: ${themeGet("colors.green")};
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

@@ -1,17 +1,24 @@
 import React, { createRef, useEffect } from "react"
 import withStyle from "./withStyle"
 import AboutMe from "./AboutMe"
+import Experiences from "./Experiences"
+import Me from "./Me"
+import Contact from "./Contact"
 
 const Home = ({ pathname, className }) => {
   const sections = [
     {
-      sectionName: "/me",
+      sectionName: "/about",
       Component: AboutMe,
     },
-    // {
-    //   sectionName: "/anotherSection",
-    //   Component: AnotherSection,
-    // },
+    {
+      sectionName: "/experiences",
+      Component: Experiences,
+    },
+    {
+      sectionName: "/contact",
+      Component: Contact,
+    },
   ]
 
   const focusedSection =
@@ -34,6 +41,7 @@ const Home = ({ pathname, className }) => {
 
   return (
     <div className={className}>
+      <Me />
       {sections.map(({ sectionName, Component }) => {
         return (
           <div ref={refs[sectionName]} key={sectionName}>
