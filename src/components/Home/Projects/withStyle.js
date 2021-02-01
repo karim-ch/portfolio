@@ -38,6 +38,14 @@ export default component => styled(component)`
       height: 300px;
       min-width: 350px;
     }
+
+    .prizes {
+    }
+
+    .prize-item {
+      height: 350px;
+      padding: 20px;
+    }
   }
 
   @media (max-width: ${themeGet("devices.sizes.large")}px) {
