@@ -26,33 +26,18 @@ export default component => styled(component)`
 
     .pic {
       width: 27%;
-      object-fit: cover;
       border-radius: 3px;
-      max-height: 240px;
+      height: fit-content;
+
+      img {
+        height: fit-content;
+        object-fit: cover;
+        max-height: 240px;
+      }
     }
 
     .text-container {
       width: 60%;
-    }
-  }
-
-  @media (max-width: ${themeGet("devices.sizes.medium")}px) {
-    max-width: unset;
-
-    .about {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-
-      .pic {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 3px;
-      }
-
-      .text-container {
-        width: 100%;
-      }
     }
   }
 
@@ -80,5 +65,56 @@ export default component => styled(component)`
         line-height: 12px;
       }
     }
+  }
+
+  @media (max-width: ${themeGet("devices.sizes.medium")}px) {
+    max-width: unset;
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .pic {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+
+      .text-container {
+        width: 100%;
+      }
+    }
+  }
+
+  /* Outline Out */
+  .hvr-outline-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+  }
+  .hvr-outline-out:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: top, right, bottom, left;
+    transition-property: top, right, bottom, left;
+  }
+  .hvr-outline-out:hover:before,
+  .hvr-outline-out:focus:before,
+  .hvr-outline-out:active:before {
+    border: ${themeGet("colors.green")} solid 4px;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
   }
 `

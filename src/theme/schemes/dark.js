@@ -12,5 +12,6 @@ export default {
     white: "#e6f1ff",
     green: "#64ffda",
     greenTint: "rgba(100, 255, 218, 0.1)",
+    darkBlue: "rgb(17, 34, 64)",
   },
 }

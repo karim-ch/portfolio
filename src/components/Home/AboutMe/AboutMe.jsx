@@ -21,7 +21,9 @@ const About = ({ className }) => {
           </ul>
         </div>
 
-        <img loading="lazy" className="pic" src={pic?.url} alt={pic?.alt} />
+        <div className="hvr-outline-out pic">
+          <img loading="lazy" src={pic?.url} alt={pic?.alt} />
+        </div>
       </div>
     </section>
   )

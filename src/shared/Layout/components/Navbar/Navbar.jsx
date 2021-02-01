@@ -38,6 +38,9 @@ const Navbar = ({ className }) => {
         <Link to="/contact">
           <li className={isElemFocused("/contact") && "active"}>Contact</li>
         </Link>
+        <Link to="/blog">
+          <li>Blog</li>
+        </Link>
         <li className="resume-btn">Resume</li>
       </ul>
     </header>
