@@ -1,54 +1,40 @@
-import React, { createRef, useCallback, useEffect } from "react"
+import React, { useCallback } from "react"
 import withStyle from "./withStyle"
 import AboutMe from "./AboutMe"
 import Experiences from "./Experiences"
 import Me from "./Me"
 import Contact from "./Contact"
-import Projects from "./Projects/Projects"
+import Projects from "./Projects"
+import Prizes from "./Prizes"
 import VizSensor from "react-visibility-sensor"
 import { useScrollContext } from "shared/ScrollContext"
 
-const Home = ({ pathname, className }) => {
+const Home = ({ className }) => {
   const { setFilter } = useScrollContext()
+  const setPage = useCallback(setFilter("page"))
 
   const sections = [
     {
-      sectionName: "/about",
+      sectionName: "about",
       Component: AboutMe,
     },
     {
-      sectionName: "/experiences",
+      sectionName: "experiences",
       Component: Experiences,
     },
     {
-      sectionName: "/projects",
+      sectionName: "projects",
       Component: Projects,
     },
     {
-      sectionName: "/contact",
+      sectionName: "prizes",
+      Component: Prizes,
+    },
+    {
+      sectionName: "contact",
       Component: Contact,
     },
   ]
-
-  const focusedSection =
-    sections.find(({ sectionName }) => sectionName === pathname)?.sectionName ??
-    null
-
-  const refs = sections.reduce((acc, value) => {
-    acc[value.sectionName] = createRef()
-    return acc
-  }, {})
-
-  useEffect(() => {
-    if (focusedSection) {
-      refs[focusedSection].current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
-    }
-  }, [focusedSection])
-
-  const setPage = useCallback(setFilter("page"))
 
   return (
     <div className={className}>
@@ -56,9 +42,9 @@ const Home = ({ pathname, className }) => {
       {sections.map(({ sectionName, Component }) => {
         return (
           <div
-            style={{ scrollMarginTop: "110px" }}
-            ref={refs[sectionName]}
             key={sectionName}
+            id={sectionName}
+            style={{ scrollMarginTop: "110px" }}
           >
             <VizSensor
               onChange={isVisible => isVisible && setPage(sectionName)}

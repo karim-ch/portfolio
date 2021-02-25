@@ -4,13 +4,11 @@ import SEO from "shared/Layout/components/SEO"
 import Home from "components/Home"
 import { withScrollContext } from "shared/ScrollContext"
 
-const IndexPage = ({ location }) => {
-  const { pathname } = location
-
+const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Home pathname={pathname} />
+      <Home />
     </Layout>
   )
 }
