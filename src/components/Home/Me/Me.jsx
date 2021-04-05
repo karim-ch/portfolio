@@ -1,6 +1,9 @@
 import React from "react"
 import withStyle from "./withStyle"
-import { Link } from "gatsby"
+import { genericHashLink } from "react-router-hash-link"
+import GatsbyLink from "gatsby-link"
+
+const MyHashLink = genericHashLink(GatsbyLink)
 
 const Me = ({ className }) => {
   return (
@@ -13,9 +16,13 @@ const Me = ({ className }) => {
         sometimes designing) high quality websites, applications, and everything
         in between.
       </p>
-      <Link to="/about">
-        <button> About Me </button>{" "}
-      </Link>
+
+      <MyHashLink
+        to="/#about"
+        scroll={el => el.scrollIntoView({ behavior: "smooth" })}
+      >
+        <button> About Me </button>
+      </MyHashLink>
     </section>
   )
 }

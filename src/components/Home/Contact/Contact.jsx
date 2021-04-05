@@ -12,7 +12,11 @@ const Contact = ({ className }) => {
           is always open. Whether you have a question, want to collaborate or
           just want to meet me, I'll get back to you ASAP!
         </p>
-        <a href="mailto:chaari.karim.plus@gmail.com" target="_blank">
+        <a
+          href="mailto:chaari.karim.plus@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button className="contact-btn">Say Hi!</button>
         </a>
       </div>

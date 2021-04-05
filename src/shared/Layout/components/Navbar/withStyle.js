@@ -52,5 +52,19 @@ export default component => styled(component)`
         background-color: #64ffda1c;
       }
     }
+
+    .burger {
+      background: none;
+      border: none;
+      svg {
+        width: 28px;
+        height: 28px;
+        fill: ${themeGet("colors.white")};
+
+        &:hover {
+          fill: ${themeGet("colors.green")};
+        }
+      }
+    }
   }
 `

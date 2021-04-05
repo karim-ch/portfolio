@@ -11,7 +11,7 @@ import { useScrollContext } from "shared/ScrollContext"
 
 const Home = ({ className }) => {
   const { setFilter } = useScrollContext()
-  const setPage = useCallback(setFilter("page"))
+  const setPage = useCallback(setFilter("page"), [])
 
   const sections = [
     {
@@ -41,7 +41,7 @@ const Home = ({ className }) => {
       <Me />
       {sections.map(({ sectionName, Component }) => {
         return (
-          <div
+          <section
             key={sectionName}
             id={sectionName}
             style={{ scrollMarginTop: "110px" }}
@@ -51,7 +51,7 @@ const Home = ({ className }) => {
             >
               <Component />
             </VizSensor>
-          </div>
+          </section>
         )
       })}
     </div>

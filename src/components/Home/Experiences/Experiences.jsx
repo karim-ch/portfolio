@@ -1,33 +1,11 @@
 import React, { useState, useRef } from "react"
 import withStyle from "./withStyle"
+import { RichText } from "prismic-reactjs"
+import useExperience from "./useExperience"
 
 const Experiences = ({ className }) => {
-  const jobsData = [
-    {
-      title: "Engineer",
-      url: "aaa",
-      company: "Vestalyze",
-      range: "May 2018 - Present",
-    },
-    {
-      title: "Team Lead - Javascript & Blockchain Developer",
-      url: "aaa",
-      company: "Lightency",
-      range: "May 2018 - Present",
-    },
-    {
-      title: "FullStack Javascript & Blockchain Trainee",
-      url: "aaa",
-      company: "Talan",
-      range: "May 2018 - Present",
-    },
-    {
-      title: "Mobile Developer Trainee",
-      url: "aaa",
-      company: "FormaLab",
-      range: "May 2018 - Present",
-    },
-  ]
+  const experiences = useExperience()
+  console.log(experiences)
 
   const [activeTabId, setActiveTabId] = useState(0)
   const tabs = useRef([])
@@ -39,10 +17,10 @@ const Experiences = ({ className }) => {
       <div>
         <div>
           <ul className="styled-tab-list">
-            {jobsData &&
-              jobsData.map(({ company }, i) => {
+            {experiences &&
+              experiences.map((experience, i) => {
                 return (
-                  <li key={company}>
+                  <li key={experience?.company[0]?.text}>
                     <button
                       className={`styled-tab-button ${
                         activeTabId === i ? "active" : ""
@@ -52,42 +30,39 @@ const Experiences = ({ className }) => {
                       role="tab"
                       tabIndex={activeTabId === i ? "0" : "-1"}
                     >
-                      <span>{company}</span>
+                      <span>{experience?.company[0]?.text}</span>
                     </button>
                   </li>
                 )
               })}
           </ul>
 
-          {jobsData &&
-            jobsData.map(({ title, url, company, range }, i) => {
-              return (
-                <div
-                  className="styled-tab-content"
-                  id={`panel-${i}`}
-                  hidden={activeTabId !== i}
-                >
-                  <h3>
-                    <span>{title}</span>
-                    <span className="company">
-                      &nbsp;@&nbsp;
-                      <a href={url} className="inline-link">
-                        {company}
-                      </a>
-                    </span>
-                  </h3>
+          {experiences &&
+            experiences.map(
+              ({ title, url, company, range, description, location }, i) => {
+                return (
+                  <div
+                    className="styled-tab-content"
+                    id={`panel-${i}`}
+                    hidden={activeTabId !== i}
+                  >
+                    <h3>
+                      <span>{title[0].text}</span>
+                      <span className="company">
+                        &nbsp;@&nbsp;
+                        <a href={url[0].text} className="inline-link">
+                          {company[0].text}
+                        </a>
+                      </span>
+                    </h3>
 
-                  <p className="range">{range}</p>
-                  <p className="job-description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </p>
-                </div>
-              )
-            })}
+                    <p className="range">{location[0].text}</p>
+                    <p className="range">{range[0].text}</p>
+                    <p className="job-description">{description[0].text}</p>
+                  </div>
+                )
+              }
+            )}
         </div>
       </div>
     </section>

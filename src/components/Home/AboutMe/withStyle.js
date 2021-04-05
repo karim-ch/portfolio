@@ -76,9 +76,13 @@ export default component => styled(component)`
       width: 100%;
 
       .pic {
+        margin-top: 20px;
         width: 100%;
         object-fit: cover;
         border-radius: 3px;
+        img {
+          width: 100%;
+        }
       }
 
       .text-container {

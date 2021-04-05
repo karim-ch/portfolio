@@ -96,6 +96,67 @@ module.exports = {
               },
             },
           },
+          jobs: [
+            {
+              order: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1, heading2, heading3, heading4, heading5, heading6",
+                  label: "order",
+                },
+              },
+              title: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1, heading2, heading3, heading4, heading5, heading6",
+                  label: "title",
+                },
+              },
+              url: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1, heading2, heading3, heading4, heading5, heading6",
+                  label: "url",
+                },
+              },
+              location: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1, heading2, heading3, heading4, heading5, heading6",
+                  label: "location",
+                },
+              },
+              company: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1, heading2, heading3, heading4, heading5, heading6",
+                  label: "company",
+                },
+              },
+              range: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1, heading2, heading3, heading4, heading5, heading6",
+                  label: "range",
+                },
+              },
+              description: {
+                type: "StructuredText",
+                config: {
+                  multi:
+                    "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  allowTargetBlank: true,
+                  label: "description",
+                },
+              },
+            },
+          ],
         },
       },
     },
