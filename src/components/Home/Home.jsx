@@ -47,6 +47,7 @@ const Home = ({ className }) => {
             style={{ scrollMarginTop: "110px" }}
           >
             <VizSensor
+              partialVisibility
               onChange={isVisible => isVisible && setPage(sectionName)}
             >
               <Component />

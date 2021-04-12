@@ -41,11 +41,31 @@ export default component => styled(component)`
     text-align: left;
     white-space: nowrap;
     color: ${themeGet("colors.slate")};
+    position: relative;
+
+    &--active {
+      color: ${themeGet("colors.green")};
+      transition: all 1s;
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        border-bottom: 2px solid ${themeGet("colors.green")};
+      }
+    }
   }
 
-  .active {
-    color: ${themeGet("colors.green")};
-    border-bottom: 2px solid ${themeGet("colors.green")};
+  .rtl.styled-tab-button--active::after {
+    animation: rtl 1s;
+  }
+
+  .ltr.styled-tab-button--active::after {
+    animation: ltr 1s;
   }
 
   .styled-tab-content {
@@ -73,6 +93,24 @@ export default component => styled(component)`
 
     .job-description {
       max-width: 500px;
+    }
+  }
+
+  @keyframes ltr {
+    0% {
+      transform: translateX(-70px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  @keyframes rtl {
+    0% {
+      transform: translateX(70px);
+    }
+    100% {
+      transform: translate(0);
     }
   }
 `

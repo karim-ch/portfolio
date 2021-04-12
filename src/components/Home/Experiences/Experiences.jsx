@@ -1,14 +1,11 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import withStyle from "./withStyle"
-import { RichText } from "prismic-reactjs"
 import useExperience from "./useExperience"
 
 const Experiences = ({ className }) => {
   const experiences = useExperience()
-  console.log(experiences)
-
   const [activeTabId, setActiveTabId] = useState(0)
-  const tabs = useRef([])
+  const [cssTransition, setCssTransition] = useState("rtl")
 
   return (
     <section className={className}>
@@ -23,9 +20,15 @@ const Experiences = ({ className }) => {
                   <li key={experience?.company[0]?.text}>
                     <button
                       className={`styled-tab-button ${
-                        activeTabId === i ? "active" : ""
-                      }`}
-                      onClick={() => setActiveTabId(i)}
+                        activeTabId === i
+                          ? `styled-tab-button--active ${cssTransition}`
+                          : ""
+                      }
+                      `}
+                      onClick={() => {
+                        setCssTransition(activeTabId > i ? "rtl" : "ltr")
+                        setActiveTabId(i)
+                      }}
                       id={`tab-${i}`}
                       role="tab"
                       tabIndex={activeTabId === i ? "0" : "-1"}

@@ -9,6 +9,7 @@ export default component => styled(component)`
   z-index: 4;
   right: 0;
   top: 0;
+  animation: appear 0.5s;
 
   a {
     text-decoration: none;
@@ -60,6 +61,15 @@ export default component => styled(component)`
       &:hover {
         background-color: #64ffda1c;
       }
+    }
+  }
+
+  @keyframes appear {
+    0% {
+      transform: translateX(300px);
+    }
+    100% {
+      transform: translate(0);
     }
   }
 `

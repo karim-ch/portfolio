@@ -41,8 +41,16 @@ export default component => styled(component)`
     border-radius: 4px;
     font-family: var(--font-mono);
     margin-top: 30px;
+    transition: all 0.2s;
+
     &:hover {
       background-color: #64ffda1c;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    &:active {
+      transform: translate(0);
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
     }
   }
 `

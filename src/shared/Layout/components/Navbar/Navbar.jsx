@@ -6,9 +6,9 @@ import { genericHashLink } from "react-router-hash-link"
 import GatsbyLink from "gatsby-link"
 import { useScrollContext } from "shared/ScrollContext"
 import useWindowSize from "shared/hooks/useWindowSize"
-import { Icon } from "../../../../components/icons"
+import { Icon } from "components/icons"
 
-const MyHashLink = genericHashLink(GatsbyLink)
+const HashLink = genericHashLink(GatsbyLink)
 
 const Navbar = ({ className, toggle }) => {
   const { filters } = useScrollContext()
@@ -32,35 +32,42 @@ const Navbar = ({ className, toggle }) => {
             }
             checked={themeName === "dark"}
           />
-          <MyHashLink
+          <HashLink
             to="/#about"
             scroll={el => el.scrollIntoView({ behavior: "smooth" })}
           >
             <li className={isElemFocused("about") && "active"}>About</li>
-          </MyHashLink>
+          </HashLink>
 
-          <MyHashLink
+          <HashLink
             to="/#experiences"
             scroll={el => el.scrollIntoView({ behavior: "smooth" })}
           >
             <li className={isElemFocused("experiences") && "active"}>
               Experience
             </li>
-          </MyHashLink>
+          </HashLink>
 
-          <MyHashLink
+          <HashLink
             to="/#projects"
             scroll={el => el.scrollIntoView({ behavior: "smooth" })}
           >
-            <li className={isElemFocused("projects") && "active"}>Projects</li>
-          </MyHashLink>
+            <li
+              className={
+                (isElemFocused("projects") || isElemFocused("prizes")) &&
+                "active"
+              }
+            >
+              Projects
+            </li>
+          </HashLink>
 
-          <MyHashLink
+          <HashLink
             to="/#contact"
             scroll={el => el.scrollIntoView({ behavior: "smooth" })}
           >
             <li className={isElemFocused("contact") && "active"}>Contact</li>
-          </MyHashLink>
+          </HashLink>
 
           <GatsbyLink to="/blog">
             <li>Blog</li>
