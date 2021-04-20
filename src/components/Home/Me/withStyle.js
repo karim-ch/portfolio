@@ -44,7 +44,7 @@ export default component => styled(component)`
     transition: all 0.2s;
 
     &:hover {
-      background-color: #64ffda1c;
+      background-color: ${themeGet("colors.lightYellow")};
       transform: translateY(-1px);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }

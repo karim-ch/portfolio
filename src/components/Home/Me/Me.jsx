@@ -10,7 +10,7 @@ const Me = ({ className }) => {
     <section className={className}>
       <h3 className="welcome">Hi there ! my name is</h3>
       <h1 className="name">Karim Chaari</h1>
-      <h2 className="description">I'm a FullStack Web Developer 👨‍💻</h2>
+      <h2 className="description">I'm a fullStack web developer 👨‍💻</h2>
       <p>
         I'm a javascript software engineer. I'm specialized in building (and
         sometimes designing) high quality websites, applications, and everything

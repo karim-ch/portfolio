@@ -8,13 +8,27 @@ import Main from "./components/Main"
 import withStyle from "./withStyle"
 import Drawer from "./components/Drawer"
 import useWindowSize from "../hooks/useWindowSize"
+import Social from "./components/Social"
+import Mail from "./components/Mail"
 
 const Layout = ({ children, className }) => {
-  const [drawerCollapsed, setDrawerCollapsed] = useState(false)
+  const [drawerVisible, setDrawerVisible] = useState(false)
+  const [isDrawerBeingClosed, setDrawerBeingClosed] = useState(false)
   const { width } = useWindowSize()
 
   const isMobile = width < 820
-  const toggle = useCallback(() => setDrawerCollapsed(v => !v), [])
+
+  const toggle = useCallback(() => {
+    if (drawerVisible) {
+      setDrawerBeingClosed(true)
+      setTimeout(() => {
+        setDrawerVisible(false)
+        setDrawerBeingClosed(false)
+      }, 500)
+    } else {
+      setDrawerVisible(true)
+    }
+  }, [drawerVisible])
 
   return (
     <ThemeProvider>
@@ -22,11 +36,15 @@ const Layout = ({ children, className }) => {
         <script src={withPrefix("script.js")} type="text/javascript" />
       </Helmet>
       <div className={className}>
-        {drawerCollapsed && isMobile && <Drawer toggle={toggle} />}
-        {drawerCollapsed && isMobile && <div className="overlay" />}
+        {drawerVisible && isMobile && (
+          <Drawer toggle={toggle} isDrawerBeingClosed={isDrawerBeingClosed} />
+        )}
+        {drawerVisible && isMobile && <div className="overlay" />}
         <Navbar toggle={toggle} />
         <Main>{children}</Main>
         <Footer />
+        {!isMobile && <Social />}
+        {!isMobile && <Mail />}
       </div>
     </ThemeProvider>
   )

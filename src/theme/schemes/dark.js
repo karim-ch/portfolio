@@ -9,5 +9,6 @@ export default {
     lightSlate: "#a8b2d1",
     white: "#fff",
     yellow: "#fdce89",
+    lightYellow: "rgb(253,206,137, 0.08)",
   },
 }

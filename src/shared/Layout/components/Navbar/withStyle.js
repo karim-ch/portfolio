@@ -38,6 +38,8 @@ export default component => styled(component)`
       margin: 0 20px;
       color: ${themeGet("colors.white")};
       list-style: none;
+      transition: all 0.3s;
+
       &:hover {
         color: ${themeGet("colors.yellow")};
       }
@@ -51,17 +53,19 @@ export default component => styled(component)`
       padding: 10px;
       border-radius: 4px;
       &:hover {
-        background-color: #64ffda1c;
+        background-color: ${themeGet("colors.lightYellow")};
       }
     }
 
     .burger {
       background: none;
       border: none;
+
       svg {
         width: 28px;
         height: 28px;
         fill: ${themeGet("colors.white")};
+        transition: all 0.3s;
 
         &:hover {
           fill: ${themeGet("colors.yellow")};

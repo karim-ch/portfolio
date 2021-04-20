@@ -34,26 +34,17 @@ const Navbar = ({ className, toggle }) => {
             }
             checked={themeName === "dark"}
           />
-          <HashLink
-            to="/#about"
-            scroll={el => el.scrollIntoView({ behavior: "smooth" })}
-          >
+          <HashLink to="/#about">
             <li className={isElemFocused("about") && "active"}>About</li>
           </HashLink>
 
-          <HashLink
-            to="/#experiences"
-            scroll={el => el.scrollIntoView({ behavior: "smooth" })}
-          >
+          <HashLink to="/#experiences">
             <li className={isElemFocused("experiences") && "active"}>
               Experience
             </li>
           </HashLink>
 
-          <HashLink
-            to="/#projects"
-            scroll={el => el.scrollIntoView({ behavior: "smooth" })}
-          >
+          <HashLink to="/#projects">
             <li
               className={
                 (isElemFocused("projects") || isElemFocused("prizes")) &&
@@ -64,10 +55,7 @@ const Navbar = ({ className, toggle }) => {
             </li>
           </HashLink>
 
-          <HashLink
-            to="/#contact"
-            scroll={el => el.scrollIntoView({ behavior: "smooth" })}
-          >
+          <HashLink to="/#contact">
             <li className={isElemFocused("contact") && "active"}>Contact</li>
           </HashLink>
 

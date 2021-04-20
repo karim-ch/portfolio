@@ -22,7 +22,7 @@ export default component => styled(component)`
       font-family: var(--font-mono);
       margin-top: 30px;
       &:hover {
-        background-color: #64ffda1c;
+        background-color: ${themeGet("colors.lightYellow")};
       }
     }
   }

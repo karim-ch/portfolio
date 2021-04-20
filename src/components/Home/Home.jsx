@@ -41,11 +41,7 @@ const Home = ({ className }) => {
       <Me />
       {sections.map(({ sectionName, Component }) => {
         return (
-          <section
-            key={sectionName}
-            id={sectionName}
-            style={{ scrollMarginTop: "110px" }}
-          >
+          <section key={sectionName} id={sectionName}>
             <VizSensor
               partialVisibility
               onChange={isVisible => isVisible && setPage(sectionName)}
