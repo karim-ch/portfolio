@@ -1,6 +1,5 @@
 import React from "react"
 import { RichText } from "prismic-reactjs"
-
 import withStyle from "./withStyle"
 import useAbout from "./useAbout"
 
@@ -21,8 +20,8 @@ const About = ({ className }) => {
           </ul>
         </div>
 
-        <div className="hvr-outline-out pic">
-          <img loading="lazy" src={pic?.url} alt={pic?.alt} />
+        <div className="wrapper">
+          <img src={pic?.url} alt={pic?.alt} className="img" />
         </div>
       </div>
     </section>

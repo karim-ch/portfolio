@@ -10,17 +10,19 @@ const Me = ({ className }) => {
     <section className={className}>
       <h3 className="welcome">Hi there ! my name is</h3>
       <h1 className="name">Karim Chaari</h1>
-      <h2 className="description">I'm a fullStack web developer 👨‍💻</h2>
+      <h2 className="description">
+        I'm a fullStack web developer{" "}
+        <span role="img" aria-label="developer">
+          👨‍💻
+        </span>
+      </h2>
       <p>
         I'm a javascript software engineer. I'm specialized in building (and
         sometimes designing) high quality websites, applications, and everything
         in between.
       </p>
 
-      <HashLink
-        to="/#about"
-        scroll={el => el.scrollIntoView({ behavior: "smooth" })}
-      >
+      <HashLink to="/#about">
         <button className="about_btn"> About Me </button>
       </HashLink>
     </section>
