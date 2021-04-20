@@ -44,7 +44,7 @@ export default component => styled(component)`
     position: relative;
 
     &--active {
-      color: ${themeGet("colors.green")};
+      color: ${themeGet("colors.yellow")};
       transition: all 1s;
       &::after {
         content: "";
@@ -55,7 +55,7 @@ export default component => styled(component)`
         top: 0;
         left: 0;
         z-index: 1;
-        border-bottom: 2px solid ${themeGet("colors.green")};
+        border-bottom: 2px solid ${themeGet("colors.yellow")};
       }
     }
   }
@@ -80,7 +80,7 @@ export default component => styled(component)`
       font-weight: 500;
 
       .company {
-        color: ${themeGet("colors.green")};
+        color: ${themeGet("colors.yellow")};
       }
     }
 

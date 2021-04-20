@@ -20,7 +20,9 @@ const Navbar = ({ className, toggle }) => {
 
   return (
     <header className={className}>
-      <span className="logo">Karim</span>
+      <div className="logo">
+        <Icon name="Logo" />
+      </div>
 
       {!isMobile && (
         <ul className="sections">

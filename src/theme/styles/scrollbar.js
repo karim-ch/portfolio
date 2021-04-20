@@ -3,7 +3,7 @@ import { themeGet } from "@styled-system/theme-get"
 
 export default css`
   * {
-    scrollbar-color: ${themeGet("colors.lightNavy")};
+    scrollbar-color: ${themeGet("colors.darkNavy")};
     ${themeGet("colors.lightestNavy")};
     scrollbar-width: thin;
   }

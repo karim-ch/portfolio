@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
-  background: ${themeGet("colors.lightNavy")};
+  background: ${themeGet("colors.darkNavy")};
   height: 100vh;
   width: 60vw;
   position: fixed;
@@ -29,7 +29,7 @@ export default component => styled(component)`
         height: 20px;
         fill: ${themeGet("colors.white")};
         &:hover {
-          fill: ${themeGet("colors.green")};
+          fill: ${themeGet("colors.yellow")};
         }
       }
     }
@@ -46,16 +46,16 @@ export default component => styled(component)`
 
     li {
       margin: 30px;
-      color: ${themeGet("colors.lightestSlate")};
+      color: ${themeGet("colors.white")};
       &:hover {
-        color: ${themeGet("colors.green")};
+        color: ${themeGet("colors.yellow")};
       }
       font-size: 18px;
     }
 
     .resume-btn {
-      border: 1px solid ${themeGet("colors.green")};
-      color: ${themeGet("colors.green")};
+      border: 1px solid ${themeGet("colors.yellow")};
+      color: ${themeGet("colors.yellow")};
       padding: 10px;
       border-radius: 4px;
       &:hover {

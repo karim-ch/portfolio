@@ -4,7 +4,7 @@ import { themeGet } from "@styled-system/theme-get"
 export default component => styled(component)`
   width: 100%;
   height: 100%;
-  background-color: ${themeGet("colors.darkBlue")};
+  background-color: ${themeGet("colors.darkNavy")};
 
   box-shadow: 0 10px 30px -15px ${themeGet("colors.navyShadow")};
   display: flex;
@@ -19,12 +19,12 @@ export default component => styled(component)`
     svg {
       width: 30px;
       &:hover {
-        color: ${themeGet("colors.green")};
+        color: ${themeGet("colors.yellow")};
       }
     }
 
     .green {
-      color: ${themeGet("colors.green")};
+      color: ${themeGet("colors.yellow")};
     }
   }
   .project-body {
@@ -48,7 +48,7 @@ export default component => styled(component)`
         content: "▹";
         position: absolute;
         left: 0;
-        color: ${themeGet("colors.green")};
+        color: ${themeGet("colors.yellow")};
         font-size: var(--fz-sm);
         line-height: 12px;
       }
@@ -56,7 +56,7 @@ export default component => styled(component)`
   }
 
   h3 {
-    color: ${themeGet("colors.lightestSlate")};
+    color: ${themeGet("colors.white")};
     padding-bottom: 7px;
   }
 `

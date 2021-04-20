@@ -16,15 +16,15 @@ export default component => styled(component)`
     align-items: ${({ odd }) => (!odd ? "flex-end" : "flex-start")};
 
     .type {
-      color: ${themeGet("colors.green")};
+      color: ${themeGet("colors.yellow")};
     }
 
     .title {
-      color: ${themeGet("colors.lightestSlate")};
+      color: ${themeGet("colors.white")};
     }
 
     > p {
-      background-color: ${themeGet("colors.darkBlue")};
+      background-color: ${themeGet("colors.darkNavy")};
       padding: 20px;
       width: 120%;
       z-index: 1;

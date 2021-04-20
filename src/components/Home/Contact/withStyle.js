@@ -14,8 +14,8 @@ export default component => styled(component)`
     text-align: -webkit-center;
 
     .contact-btn {
-      border: 1px solid ${themeGet("colors.green")};
-      color: ${themeGet("colors.green")};
+      border: 1px solid ${themeGet("colors.yellow")};
+      color: ${themeGet("colors.yellow")};
       background-color: transparent;
       padding: 13px;
       border-radius: 4px;

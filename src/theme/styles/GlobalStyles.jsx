@@ -62,7 +62,7 @@ const globalStyles = createGlobalStyle`
       width: fit-content;
       font-size: clamp(26px, 5vw, var(--fz-heading));
       white-space: nowrap;
-      color: ${themeGet("colors.lightestSlate")};
+      color: ${themeGet("colors.white")};
 
     }
      p {
@@ -75,7 +75,7 @@ const globalStyles = createGlobalStyle`
     
     a {
       text-decoration: none;
-      color: ${themeGet("colors.green")};
+      color: ${themeGet("colors.yellow")};
       &:hover {
         text-decoration: underline;
       }

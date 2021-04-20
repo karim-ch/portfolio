@@ -60,7 +60,7 @@ export default component => styled(component)`
         content: "▰";
         position: absolute;
         left: 0;
-        color: ${themeGet("colors.green")};
+        color: ${themeGet("colors.yellow")};
         font-size: var(--fz-sm);
         line-height: 12px;
       }
@@ -115,7 +115,7 @@ export default component => styled(component)`
   .hvr-outline-out:hover:before,
   .hvr-outline-out:focus:before,
   .hvr-outline-out:active:before {
-    border: ${themeGet("colors.green")} solid 4px;
+    border: ${themeGet("colors.yellow")} solid 4px;
     top: -8px;
     right: -8px;
     bottom: -8px;

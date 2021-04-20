@@ -7,17 +7,17 @@ export default component => styled(component)`
   max-width: 900px;
 
   .welcome {
-    color: ${themeGet("colors.green")};
+    color: ${themeGet("colors.yellow")};
     font-family: var(--font-mono);
   }
 
   .name {
-    color: ${themeGet("colors.lightestSlate")};
+    color: ${themeGet("colors.white")};
     font-family: var(--font-mono);
     font-size: 80px;
     &:after {
       content: ".";
-      color: ${themeGet("colors.green")};
+      color: ${themeGet("colors.yellow")};
       border-radius: 30px;
     }
   }
@@ -34,8 +34,8 @@ export default component => styled(component)`
   }
 
   button {
-    border: 1px solid ${themeGet("colors.green")};
-    color: ${themeGet("colors.green")};
+    border: 1px solid ${themeGet("colors.yellow")};
+    color: ${themeGet("colors.yellow")};
     background-color: transparent;
     padding: 20px 45px;
     border-radius: 4px;

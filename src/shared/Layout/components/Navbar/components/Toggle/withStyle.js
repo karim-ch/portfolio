@@ -29,7 +29,7 @@ export default component => styled(component)`
     left: 0;
     overflow: hidden;
     opacity: 1;
-    background-color: ${themeGet("colors.lightestSlate")};
+    background-color: ${themeGet("colors.white")};
     border-radius: 40px;
     transition: 0.2s ease background-color, 0.2s ease opacity;
   }
@@ -46,13 +46,13 @@ export default component => styled(component)`
   }
 
   span:before {
-    background-color: ${themeGet("colors.lightestSlate")};
+    background-color: ${themeGet("colors.white")};
     transform: translate(-11px, 0px);
     z-index: 1;
   }
 
   span:after {
-    background-color: #009c4e;
+    background-color: ${themeGet("colors.darkNavy")};
     transform: translate(4px, 0px);
     z-index: 0;
   }
@@ -71,7 +71,7 @@ export default component => styled(component)`
   }
 
   input[type="checkbox"]:checked + span:after {
-    background-color: ${themeGet("colors.lightestSlate")};
+    background-color: ${themeGet("colors.white")};
     transform: translate(11px, 0px);
   }
 `

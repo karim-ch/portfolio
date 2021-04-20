@@ -10,13 +10,13 @@ import {
   IconInstagram,
   IconLinkedin,
   IconLoader,
-  IconLogo,
   IconPlayStore,
   IconStar,
   IconTwitter,
   IconZap,
   Close,
   Burger,
+  Logo,
 } from "components/icons"
 
 const Icon = ({ name }) => {
@@ -39,8 +39,6 @@ const Icon = ({ name }) => {
       return <IconLinkedin />
     case "Loader":
       return <IconLoader />
-    case "Logo":
-      return <IconLogo />
     case "PlayStore":
       return <IconPlayStore />
     case "Star":
@@ -53,6 +51,8 @@ const Icon = ({ name }) => {
       return <Close />
     case "Burger":
       return <Burger />
+    case "Logo":
+      return <Logo />
     default:
       return <IconExternal />
   }

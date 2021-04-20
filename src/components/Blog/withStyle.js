@@ -7,8 +7,8 @@ export default component => styled(component)`
   text-align: center;
 
   button {
-    border: 1px solid ${themeGet("colors.green")};
-    color: ${themeGet("colors.green")};
+    border: 1px solid ${themeGet("colors.yellow")};
+    color: ${themeGet("colors.yellow")};
     background-color: transparent;
     padding: 20px 45px;
     border-radius: 4px;

@@ -4,12 +4,12 @@ import { themeGet } from "@styled-system/theme-get"
 export default component => styled(component)`
   display: flex;
   flex-direction: row;
-  box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 15px -10px;
+  box-shadow: rgba(2, 12, 27, 0.7) 0 10px 15px -10px;
   height: 70px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  color: var(--lightest-slate);
+  color: ${themeGet("colors.white")};
   font-family: var(--font-mono);
   position: sticky;
   background-color: ${themeGet("colors.navy")};
@@ -18,14 +18,16 @@ export default component => styled(component)`
 
   .logo {
     padding: 0 30px;
-    font-weight: bold;
-    color: ${themeGet("colors.green")};
-    font-size: 24px;
-    font-family: var(--font-sans);
+
+    svg {
+      width: 45px;
+      height: 45px;
+      fill: ${themeGet("colors.yellow")};
+    }
   }
 
   .active {
-    color: ${themeGet("colors.green")};
+    color: ${themeGet("colors.yellow")};
   }
 
   .sections {
@@ -34,18 +36,18 @@ export default component => styled(component)`
 
     > * {
       margin: 0 20px;
-      color: ${themeGet("colors.lightestSlate")};
+      color: ${themeGet("colors.white")};
       list-style: none;
       &:hover {
-        color: ${themeGet("colors.green")};
+        color: ${themeGet("colors.yellow")};
       }
       text-decoration: none;
       font-size: 13px;
     }
 
     .resume-btn {
-      border: 1px solid ${themeGet("colors.green")};
-      color: ${themeGet("colors.green")};
+      border: 1px solid ${themeGet("colors.yellow")};
+      color: ${themeGet("colors.yellow")};
       padding: 10px;
       border-radius: 4px;
       &:hover {
@@ -62,7 +64,7 @@ export default component => styled(component)`
         fill: ${themeGet("colors.white")};
 
         &:hover {
-          fill: ${themeGet("colors.green")};
+          fill: ${themeGet("colors.yellow")};
         }
       }
     }
