@@ -157,6 +157,110 @@ module.exports = {
               },
             },
           ],
+          events: [
+            {
+              title: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1, heading2, heading3, heading4, heading5, heading6",
+                  label: "title",
+                },
+              },
+              type: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1, heading2, heading3, heading4, heading5, heading6",
+                  label: "type",
+                },
+              },
+              description: {
+                type: "StructuredText",
+                config: {
+                  multi:
+                    "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  label: "description",
+                },
+              },
+              date: {
+                type: "Date",
+                config: {
+                  label: "date",
+                },
+              },
+              url: {
+                type: "Link",
+                config: {
+                  label: "url",
+                },
+              },
+              image: {
+                type: "Image",
+                config: {
+                  constraint: {},
+                  thumbnails: [],
+                  label: "image",
+                },
+              },
+              skills: {
+                type: "Group",
+                config: {
+                  fields: {
+                    skill: {
+                      type: "StructuredText",
+                      config: {
+                        single:
+                          "heading1, heading2, heading3, heading4, heading5, heading6",
+                        label: "skill",
+                      },
+                    },
+                  },
+                  label: "skills",
+                },
+              },
+            },
+          ],
+          links: {
+            linkedin: {
+              type: "Link",
+              config: {
+                label: "linkedin",
+              },
+            },
+            instagram: {
+              type: "Link",
+              config: {
+                label: "instagram",
+              },
+            },
+            github: {
+              type: "Link",
+              config: {
+                label: "github",
+              },
+            },
+            mail: {
+              type: "StructuredText",
+              config: {
+                single:
+                  "heading1, heading2, heading3, heading4, heading5, heading6",
+                label: "mail",
+              },
+            },
+            twitter: {
+              type: "Link",
+              config: {
+                label: "twitter",
+              },
+            },
+            resume: {
+              type: "Link",
+              config: {
+                label: "resume",
+              },
+            },
+          },
         },
       },
     },

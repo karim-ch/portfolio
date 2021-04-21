@@ -6,10 +6,15 @@ import { useScrollContext } from "shared/ScrollContext"
 import Toggle from "../Navbar/components/Toggle/Toggle"
 import { useTheme } from "theme"
 import { Icon } from "components/icons"
+import useConfig from "../../../hooks/useconfig"
 
 const MyHashLink = genericHashLink(GatsbyLink)
 
 const Drawer = ({ className, toggle, isDrawerBeingClosed }) => {
+  const {
+    resume: { url },
+  } = useConfig()
+
   const { name: themeName, setTheme } = useTheme()
   const { filters } = useScrollContext()
   const isElemFocused = section => filters?.page === section
@@ -53,7 +58,9 @@ const Drawer = ({ className, toggle, isDrawerBeingClosed }) => {
           <GatsbyLink to="/blog">
             <li>Blog</li>
           </GatsbyLink>
-          <li className="resume-btn">Resume</li>
+          <a href={url} target="_blank" rel="noreferrer" className="resume-btn">
+            Resume
+          </a>
         </ul>
       </div>
     </div>

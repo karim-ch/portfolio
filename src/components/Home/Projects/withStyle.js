@@ -30,36 +30,33 @@ export default component => styled(component)`
     }
 
     .project-item {
-      flex: 1 0 calc(30% - 10px);
+      flex: 1 0 30%;
       box-sizing: border-box;
       padding: 10px;
       margin-left: 10px;
       margin-top: 10px;
       height: 300px;
-      min-width: 350px;
-    }
-
-    .prizes {
-    }
-
-    .prize-item {
-      height: 350px;
-      padding: 20px;
+      width: 350px;
     }
   }
 
   @media (max-width: ${themeGet("devices.sizes.large")}px) {
     .projects-container {
       .project-item {
-        flex: 1 0 calc(49% - 10px);
+        flex: 1 0 48%;
       }
     }
   }
 
   @media (max-width: ${themeGet("devices.sizes.medium")}px) {
+    .line {
+      &:after {
+        width: 5vw;
+      }
+    }
     .projects-container {
       .project-item {
-        flex: 100%;
+        flex: 1 0 100%;
       }
     }
   }

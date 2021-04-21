@@ -20,7 +20,7 @@ const About = ({ className }) => {
           </ul>
         </div>
 
-        <div className="wrapper">
+        <div className="pic">
           <img src={pic?.url} alt={pic?.alt} className="img" />
         </div>
       </div>

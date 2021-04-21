@@ -18,10 +18,10 @@ const Home = ({ className }) => {
       sectionName: "about",
       Component: AboutMe,
     },
-    {
-      sectionName: "experiences",
-      Component: Experiences,
-    },
+    // {
+    //   sectionName: "experiences",
+    //   Component: Experiences,
+    // },
     {
       sectionName: "projects",
       Component: Projects,

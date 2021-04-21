@@ -16,6 +16,10 @@ export default component => styled(component)`
     align-self: center;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   h6 {
     writing-mode: vertical-rl;
     color: ${themeGet("colors.white")};

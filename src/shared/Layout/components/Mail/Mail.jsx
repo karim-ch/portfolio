@@ -1,10 +1,15 @@
 import React from "react"
 import withStyle from "./withStyle"
+import useConfig from "../../../hooks/useconfig"
 
 const Mail = ({ className }) => {
+  const { mail } = useConfig()
+  const [{ text: email }] = mail
   return (
     <div className={className}>
-      <h6>chaari.karim.plus@gmail.com</h6>
+      <a href={`mailto:${email}`}>
+        <h6>{email}</h6>
+      </a>
     </div>
   )
 }

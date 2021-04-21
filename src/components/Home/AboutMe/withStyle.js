@@ -24,7 +24,7 @@ export default component => styled(component)`
     flex-direction: row;
     justify-content: space-between;
 
-    .wrapper {
+    .pic {
       display: block;
       position: relative;
       max-height: 280px;
@@ -120,9 +120,10 @@ export default component => styled(component)`
       flex-direction: column;
       width: 100%;
 
-      .wrapper {
+      .pic {
         margin-top: 20px;
         align-self: center;
+        width: 50%;
       }
 
       .text-container {
@@ -130,35 +131,4 @@ export default component => styled(component)`
       }
     }
   }
-
-  // /* Outline Out */
-  // .hvr-outline-out {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  //   -webkit-transform: perspective(1px) translateZ(0);
-  //   transform: perspective(1px) translateZ(0);
-  //   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  //   position: relative;
-  // }
-  // .hvr-outline-out:before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   -webkit-transition-duration: 0.3s;
-  //   transition-duration: 0.3s;
-  //   -webkit-transition-property: top, right, bottom, left;
-  //   transition-property: top, right, bottom, left;
-  // }
-  // .hvr-outline-out:hover:before,
-  // .hvr-outline-out:focus:before,
-  // .hvr-outline-out:active:before {
-  //   border: ${themeGet("colors.yellow")} solid 4px;
-  //   top: -8px;
-  //   right: -8px;
-  //   bottom: -8px;
-  //   left: -8px;
-  // }
 `

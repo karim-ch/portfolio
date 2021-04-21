@@ -16,6 +16,10 @@ export default component => styled(component)`
   top: 0;
   z-index: 2;
 
+  a {
+    text-decoration: none;
+  }
+
   .logo {
     padding: 0 30px;
 

@@ -61,8 +61,9 @@ export default component => styled(component)`
       .resume-btn {
         border: 1px solid ${themeGet("colors.yellow")};
         color: ${themeGet("colors.yellow")};
-        padding: 10px;
         border-radius: 4px;
+        padding: 15px 35px;
+
         &:hover {
           background-color: ${themeGet("colors.lightYellow")};
         }

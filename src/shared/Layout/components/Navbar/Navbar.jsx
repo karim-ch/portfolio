@@ -7,10 +7,15 @@ import GatsbyLink from "gatsby-link"
 import { useScrollContext } from "shared/ScrollContext"
 import useWindowSize from "shared/hooks/useWindowSize"
 import { Icon } from "components/icons"
+import useConfig from "../../../hooks/useconfig"
 
 const HashLink = genericHashLink(GatsbyLink)
 
 const Navbar = ({ className, toggle }) => {
+  const {
+    resume: { url },
+  } = useConfig()
+
   const { filters } = useScrollContext()
   const { name: themeName, setTheme } = useTheme()
   const { width } = useWindowSize()
@@ -20,9 +25,9 @@ const Navbar = ({ className, toggle }) => {
 
   return (
     <header className={className}>
-      <div className="logo">
+      <a className="logo" href="/">
         <Icon name="Logo" />
-      </div>
+      </a>
 
       {!isMobile && (
         <ul className="sections">
@@ -62,7 +67,16 @@ const Navbar = ({ className, toggle }) => {
           <GatsbyLink to="/blog">
             <li>Blog</li>
           </GatsbyLink>
-          <li className="resume-btn">Resume</li>
+          <li>
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="resume-btn"
+            >
+              Resume
+            </a>
+          </li>
         </ul>
       )}
       {isMobile && (

@@ -50,7 +50,7 @@ const projects = [
 const Projects = ({ className }) => {
   return (
     <section className={className}>
-      <h2 className="heading line"> My Projects & Awards </h2>
+      <h2 className="heading line"> Projects & Awards </h2>
       <div className="projects-container">
         <h3 className="heading sm"> Some Things I’ve Built </h3>
         <div className="projects">

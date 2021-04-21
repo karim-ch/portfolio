@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
-  margin-top: 22vh;
+  margin-top: 10%;
   min-height: 50vh;
   max-width: 900px;
 

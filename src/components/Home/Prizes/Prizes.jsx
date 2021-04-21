@@ -1,38 +1,10 @@
 import React from "react"
 import withStyle from "./withStyle"
 import Prize from "./Components/Prize"
-
-const prizes = [
-  {
-    type: "Hackathon",
-    title: "Hacking Health",
-    date: "april 2020",
-    image: "sdfsdf",
-    url: "123",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  },
-  {
-    type: "Hackathon",
-    title: "Hacking Health",
-    date: "april 2020",
-    image: "sdfsdf",
-    url: "123",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  },
-  {
-    type: "Hackathon",
-    title: "Hacking Health",
-    date: "april 2020",
-    image: "sdfsdf",
-    url: "123",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  },
-]
+import usePrizes from "./usePrizes"
 
 const Prizes = ({ className }) => {
+  const prizes = usePrizes()
   return (
     <section className={className}>
       <div className="projects-container">
