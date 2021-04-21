@@ -16,6 +16,7 @@ import {
   Close,
   Burger,
   Logo,
+  Arrow,
 } from "components/icons"
 
 const Icon = ({ name }) => {
@@ -36,6 +37,8 @@ const Icon = ({ name }) => {
       return <IconInstagram />
     case "Linkedin":
       return <IconLinkedin />
+    case "Arrow":
+      return <Arrow />
     case "PlayStore":
       return <IconPlayStore />
     case "Star":

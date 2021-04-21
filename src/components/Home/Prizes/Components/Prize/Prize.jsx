@@ -3,7 +3,6 @@ import withStyle from "./withStyle"
 
 const Prize = ({ className, prize }) => {
   const { url, title, description, date, image, type } = prize
-  console.log(url)
   return (
     <div className={className}>
       <div className="text-container">

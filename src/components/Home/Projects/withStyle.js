@@ -78,4 +78,81 @@ export default component => styled(component)`
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
   }
+
+  .btn-container {
+    text-align: center;
+    .btn-see-more {
+      &:link,
+      &:visited {
+        color: ${themeGet("colors.yellow")};
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid ${themeGet("colors.yellow")};
+        transition: all 0.2s;
+        text-align: center;
+        padding: 10px 30px;
+        border-radius: 4px;
+      }
+
+      &:hover {
+        background-color: ${themeGet("colors.lightYellow")};
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+        .learn {
+          animation: moveToLeft ease-in-out;
+          animation-duration: 0.3s;
+          animation-fill-mode: forwards;
+        }
+
+        .arrow {
+          animation: appearFromLeft ease-in-out;
+          animation-duration: 0.3s;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 1px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .learn {
+      transform: translateX(5px);
+    }
+
+    .arrow,
+    .learn {
+      display: inline-block;
+    }
+
+    .arrow {
+      opacity: 0;
+      svg {
+        width: 10px;
+        height: 10px;
+        fill: ${themeGet("colors.yellow")};
+      }
+    }
+  }
+
+  @keyframes appearFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    100% {
+      transform: translateX(2px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes moveToLeft {
+    0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
 `

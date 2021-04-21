@@ -29,7 +29,6 @@ const useAbout = () => {
     }
   `)
 
-  console.log(data)
   const { resume, twitter, mail, github, instagram, linkedin } = get(
     data,
     "prismicConfig.data",

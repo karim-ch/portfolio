@@ -10,6 +10,11 @@ export default component => styled(component)`
   display: flex;
   flex-direction: column;
 
+  a {
+    text-decoration: none;
+    color: ${themeGet("colors.white")};
+  }
+
   .project-title {
     height: 20%;
     padding: 4% 10%;
