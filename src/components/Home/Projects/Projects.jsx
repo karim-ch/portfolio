@@ -1,7 +1,7 @@
 import React from "react"
-import Project from "./Components/Project"
+import Project from "./components/Project"
 import withStyle from "./withStyle"
-import useProjects from "./Components/useProjects"
+import useProjects from "./useProjects"
 import { Icon } from "../../icons"
 import useConfig from "../../../shared/hooks/useconfig"
 
