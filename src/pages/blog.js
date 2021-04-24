@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "shared/Layout"
-import Blog from "components/Blog"
+import Blog from "screens/Blog"
 import SEO from "shared/Layout/components/SEO"
 
 const BlogPage = () => {

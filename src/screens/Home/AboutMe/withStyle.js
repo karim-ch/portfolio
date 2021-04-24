@@ -6,19 +6,6 @@ export default component => styled(component)`
   font-family: var(--font-sans);
   max-width: 900px;
 
-  .heading {
-    &:after {
-      content: "";
-      display: block;
-      position: relative;
-      top: 5px;
-      width: 30vw;
-      height: 1px;
-      margin-left: 20px;
-      background-color: ${themeGet("colors.lightestNavy")};
-    }
-  }
-
   .about {
     display: flex;
     flex-direction: row;

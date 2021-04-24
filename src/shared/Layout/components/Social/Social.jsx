@@ -1,7 +1,7 @@
 import React from "react"
 import withStyle from "./withStyle"
 import { Icon } from "components/icons"
-import useConfig from "../../../hooks/useconfig"
+import useConfig from "shared/hooks/useconfig"
 
 const Social = ({ className }) => {
   const { github, linkedin, instagram, twitter } = useConfig()

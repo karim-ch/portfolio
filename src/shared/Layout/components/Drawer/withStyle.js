@@ -11,18 +11,14 @@ export default component => styled(component)`
     right: 0;
     top: 0;
     animation: appear 0.5s ease-in-out;
+    font-size: var(--fz-lg);
 
     &--closing {
       animation: disappear 0.49s ease-in-out;
     }
 
-    a {
-      text-decoration: none;
-    }
-
     .top {
-      height: 70px;
-      padding: 20px;
+      padding: 2rem;
 
       button {
         float: right;
@@ -30,8 +26,8 @@ export default component => styled(component)`
         border: none;
 
         svg {
-          width: 20px;
-          height: 20px;
+          width: 2rem;
+          height: 2rem;
           fill: ${themeGet("colors.white")};
           &:hover {
             fill: ${themeGet("colors.yellow")};
@@ -50,19 +46,19 @@ export default component => styled(component)`
       text-decoration: none;
 
       li {
-        margin: 30px;
+        margin: 3rem;
         color: ${themeGet("colors.white")};
         &:hover {
           color: ${themeGet("colors.yellow")};
         }
-        font-size: 18px;
       }
 
       .resume-btn {
         border: 1px solid ${themeGet("colors.yellow")};
         color: ${themeGet("colors.yellow")};
-        border-radius: 4px;
-        padding: 15px 35px;
+        border-radius: 0.4rem;
+        padding: 1.2rem 3.3rem;
+        transition: all 0.3s;
 
         &:hover {
           background-color: ${themeGet("colors.lightYellow")};
@@ -74,7 +70,7 @@ export default component => styled(component)`
   @keyframes appear {
     0% {
       opacity: 0.5;
-      transform: translateX(300px);
+      transform: translateX(30rem);
     }
     100% {
       transform: translate(0);
@@ -88,7 +84,7 @@ export default component => styled(component)`
     }
     100% {
       opacity: 0.5;
-      transform: translateX(300px);
+      transform: translateX(30rem);
     }
   }
 `

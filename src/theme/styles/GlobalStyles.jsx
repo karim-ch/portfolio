@@ -16,68 +16,75 @@ const globalStyles = createGlobalStyle`
     
     --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    
+    // Root font size
+    font-size: 10px;
 
-    --fz-xxs: 12px;
-    --fz-xs: 13px;
-    --fz-sm: 14px;
-    --fz-md: 16px;
-    --fz-lg: 18px;
-    --fz-xl: 20px;
-    --fz-xxl: 22px;
-    --fz-heading: 32px;
+    --fz-xxs: 1.2rem;
+    --fz-xs: 1.3rem;
+    --fz-sm: 1.4rem;
+    --fz-md: 1.6rem;
+    --fz-lg: 1.8rem;
+    --fz-xl: 2.0rem;
+    --fz-xxl: 2.2rem;
+    --fz-heading: 3.2rem;
+    --fz-description: 4rem;
+    --fz-name: 8rem;
+    
+    counter-reset: navbar;
+
+    @media (max-width: ${themeGet("devices.sizes.medium")}px) {
+      --fz-xxs: 1rem;
+      --fz-xs: 1.1rem;
+      --fz-sm: 1.2rem;
+      --fz-md: 1.4rem;
+      --fz-lg: 1.6rem;
+      --fz-xl: 1.8rem;
+      --fz-xxl: 2.0rem;
+      --fz-heading: 3.0rem;
+      --fz-description: 3rem;
+      --fz-name: 6rem;
+    }
   }
 
-  html {
-    box-sizing: border-box;
-    width: 100%;
-  }
-
-  button {
-    outline: none;
-  }
-  
   body {
-    margin: 0;
-    width: 100%;
-    min-height: 100%;
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    color:  ${themeGet("colors.slate")};
+    color: ${themeGet("colors.slate")};
     font-family: var(--font-sans); 
     font-size: var(--fz-md);
     line-height: 1.3;
+  }
 
-    @media (max-width: 480px) {
-      font-size: var(--fz-lg);
-    }
+  a {
+    text-decoration: none;
+    color: ${themeGet("colors.slate")};
   }
   
   section {
     .heading {
+      margin: 1rem 0 4rem;
+      width: 100%;
       display: flex;
       align-items: center;
-      position: relative;
-      margin: 10px 0 40px;
-      width: fit-content;
-      font-size: clamp(26px, 5vw, var(--fz-heading));
       white-space: nowrap;
-      color: ${themeGet("colors.white")};
-
+      
+      &:after {
+        content: "";
+        display: block;
+        width: -webkit-fill-available;
+        height: 1px;
+        margin: 0 2rem;
+        background-color: ${themeGet("colors.lightestNavy")};
+      }
     }
+    
      p {
       margin: 0 0 15px 0;
       &:last-child,
       &:last-of-type {
         margin: 0;
-      }
-    }
-    
-    a {
-      text-decoration: none;
-      color: ${themeGet("colors.yellow")};
-      &:hover {
-        text-decoration: underline;
       }
     }
   }

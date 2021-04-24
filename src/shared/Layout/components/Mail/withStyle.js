@@ -17,16 +17,12 @@ export default component => styled(component)`
   }
 
   a {
-    text-decoration: none;
-  }
-
-  h6 {
     writing-mode: vertical-rl;
-    color: ${themeGet("colors.white")};
+    color: ${themeGet("colors.slate")};
     font-size: var(--fz-xs);
     letter-spacing: 1.3px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     transition: all 0.4s;
 
     &:hover {

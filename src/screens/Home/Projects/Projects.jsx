@@ -2,7 +2,7 @@ import React from "react"
 import Project from "./components/Project"
 import withStyle from "./withStyle"
 import useProjects from "./useProjects"
-import { Icon } from "../../icons"
+import { Icon } from "../../../components/icons"
 import useConfig from "../../../shared/hooks/useconfig"
 
 const Projects = ({ className }) => {
@@ -11,9 +11,9 @@ const Projects = ({ className }) => {
 
   return (
     <section className={className}>
-      <h2 className="heading line"> Projects & Awards </h2>
+      <h2 className="heading"> Projects & Awards </h2>
       <div className="projects-container">
-        <h3 className="heading sm"> Some Things I’ve Built </h3>
+        <h3 className="heading heading--sm"> Some Things I’ve Built </h3>
         <div className="projects">
           {githubProjects.map(project => (
             <div className="project-item hvr-grow">

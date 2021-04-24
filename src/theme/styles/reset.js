@@ -100,11 +100,18 @@ export default css`
   section {
     display: block;
   }
+
+  html {
+    box-sizing: border-box;
+    width: 100%;
+  }
   body {
-    // line-height: 1;line-heightline-height
+    margin: 0;
+    width: 100%;
   }
   button {
     cursor: pointer;
+    outline: none;
   }
   blockquote,
   q {
@@ -112,11 +119,6 @@ export default css`
   }
   blockquote:before,
   blockquote:after,
-  q:before,
-  q:after {
-    content: "";
-    content: none;
-  }
   table {
     border-collapse: collapse;
     border-spacing: 0;

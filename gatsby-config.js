@@ -14,6 +14,7 @@ module.exports = {
         root: "./src",
         aliases: {
           components: "./components",
+          screens: "./screens",
           theme: "./theme",
           shared: "./shared",
           fonts: "./fonts",

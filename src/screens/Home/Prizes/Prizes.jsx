@@ -8,7 +8,7 @@ const Prizes = ({ className }) => {
   return (
     <section className={className}>
       <div className="projects-container">
-        <h3 className="heading sm"> I've Been Here </h3>
+        <h3 className="heading"> I've Been Here </h3>
         <div className="prizes">
           {prizes.map((prize, i) => (
             <div className="prize-item">

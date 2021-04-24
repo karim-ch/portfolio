@@ -5,21 +5,15 @@ export default component => styled(component)`
   margin-top: 20vh;
   font-family: var(--font-sans);
 
-  .line {
-    &:after {
-      content: "";
-      display: block;
-      position: relative;
-      top: 5px;
-      width: 30vw;
-      height: 1px;
-      margin-left: 20px;
-      background-color: ${themeGet("colors.lightestNavy")};
-    }
-  }
+  .heading {
+    max-width: 900px;
+    font-size: var(--fz-xxl);
 
-  .sm {
-    font-size: 25px;
+    &--sm {
+      &:after {
+        display: none;
+      }
+    }
   }
 
   .projects-container {

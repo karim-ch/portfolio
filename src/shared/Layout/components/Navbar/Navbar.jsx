@@ -1,13 +1,13 @@
 import React from "react"
+import GatsbyLink from "gatsby-link"
 import { useTheme } from "theme"
 import Toggle from "./components/Toggle"
 import withStyle from "./withStyle"
 import { genericHashLink } from "react-router-hash-link"
-import GatsbyLink from "gatsby-link"
 import { useScrollContext } from "shared/ScrollContext"
 import useWindowSize from "shared/hooks/useWindowSize"
 import { Icon } from "components/icons"
-import useConfig from "../../../hooks/useconfig"
+import useConfig from "shared/hooks/useconfig"
 
 const HashLink = genericHashLink(GatsbyLink)
 
@@ -29,7 +29,7 @@ const Navbar = ({ className, toggle }) => {
         <Icon name="Logo" />
       </a>
 
-      {!isMobile && (
+      {!isMobile ? (
         <ul className="sections">
           <Toggle
             onClick={() =>
@@ -78,8 +78,7 @@ const Navbar = ({ className, toggle }) => {
             </a>
           </li>
         </ul>
-      )}
-      {isMobile && (
+      ) : (
         <ul className="sections">
           <button className="burger" onClick={toggle}>
             <Icon name="Burger" />

@@ -1,15 +1,10 @@
 import React, { useState, useCallback } from "react"
-import { ThemeProvider } from "theme"
 import { withPrefix } from "gatsby"
-import Navbar from "./components/Navbar"
 import { Helmet } from "react-helmet"
-import Footer from "./components/Footer"
-import Main from "./components/Main"
+import { ThemeProvider } from "theme"
+import { Navbar, Main, Footer, Drawer, Social, Mail } from "./components"
 import withStyle from "./withStyle"
-import Drawer from "./components/Drawer"
-import useWindowSize from "../hooks/useWindowSize"
-import Social from "./components/Social"
-import Mail from "./components/Mail"
+import useWindowSize from "shared/hooks/useWindowSize"
 
 const Layout = ({ children, className }) => {
   const [drawerVisible, setDrawerVisible] = useState(false)

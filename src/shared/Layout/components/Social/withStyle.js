@@ -28,8 +28,8 @@ export default component => styled(component)`
   }
 
   svg {
-    margin-bottom: 20px;
-    width: 20px;
-    height: 20px;
+    margin-bottom: 2rem;
+    width: 2rem;
+    height: 2rem;
   }
 `

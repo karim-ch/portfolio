@@ -4,7 +4,7 @@ import withStyle from "./withStyle"
 const Footer = ({ className }) => {
   return (
     <footer className={className}>
-      <h5>
+      <text>
         Designed and build with{" "}
         <span role="img" aria-label="heart">
           💙
@@ -13,8 +13,9 @@ const Footer = ({ className }) => {
         <span role="img" aria-label="victory">
           ✌
         </span>
-      </h5>
-      <h5>{new Date().getFullYear()} ©</h5>
+      </text>
+      <br />
+      <small>{new Date().getFullYear()} ©</small>
     </footer>
   )
 }
