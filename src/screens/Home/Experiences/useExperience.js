@@ -16,6 +16,16 @@ const useExperience = () => {
               }
               description {
                 text
+                type
+                spans {
+                  end
+                  type
+                  start
+                  data {
+                    link_type
+                    url
+                  }
+                }
               }
               location {
                 text

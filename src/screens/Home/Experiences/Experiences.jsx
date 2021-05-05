@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import withStyle from "./withStyle"
+import { RichText } from "prismic-reactjs"
 import useExperience from "./useExperience"
 
 const Experiences = ({ className }) => {
@@ -61,7 +62,9 @@ const Experiences = ({ className }) => {
 
                     <p className="range">{location[0].text}</p>
                     <p className="range">{range[0].text}</p>
-                    <p className="job-description">{description[0].text}</p>
+                    <div className="job-description">
+                      <RichText render={description} />
+                    </div>
                   </div>
                 )
               }

@@ -4,7 +4,7 @@ import { Icon } from "components/icons"
 import useConfig from "shared/hooks/useconfig"
 
 const Social = ({ className }) => {
-  const { github, linkedin, instagram, twitter } = useConfig()
+  const { github, linkedin, instagram, stackoverflow } = useConfig()
 
   return (
     <div className={className}>
@@ -17,8 +17,8 @@ const Social = ({ className }) => {
       <a href={instagram.url} target="_blank" rel="noreferrer">
         <Icon name="Instagram" />
       </a>
-      <a href={twitter.url} target="_blank" rel="noreferrer">
-        <Icon name="Twitter" />
+      <a href={stackoverflow.url} target="_blank" rel="noreferrer">
+        <Icon name="Stackoverflow" />
       </a>
     </div>
   )

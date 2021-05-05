@@ -22,10 +22,6 @@ export default component => styled(component)`
       height: 4.5rem;
       fill: ${themeGet("colors.yellow")};
       transition: all 0.5s;
-
-      &:hover {
-        transform: rotate(360deg);
-      }
     }
   }
 

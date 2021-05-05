@@ -6,76 +6,31 @@ export default component => styled(component)`
   font-family: var(--font-sans);
   max-width: 900px;
 
-  .about {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  a {
+    color: ${themeGet("colors.yellow")};
 
-    .pic {
-      display: block;
-      position: relative;
-      max-height: 280px;
-      width: 30%;
-      border-radius: 8px;
-
-      &:hover {
-        background: transparent;
-        outline: 0;
-
-        &:after {
-          top: 10px;
-          left: 10px;
-        }
-
-        .img {
-          filter: none;
-          mix-blend-mode: normal;
-        }
-      }
-
-      .img {
-        position: relative;
-        border-radius: 7px;
-        mix-blend-mode: multiply;
-        filter: grayscale(100%) contrast(1);
-        height: 100%;
-        width: 100%;
-        transition: all 0.2s;
-      }
-
-      &:before,
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-        transition: all 0.2s;
-      }
-
-      &:before {
-        top: 0;
-        left: 0;
-        background-color: ${themeGet("colors.yellow")};
-      }
-
-      &:after {
-        border: 2px solid ${themeGet("colors.yellow")};
-        top: 12px;
-        left: 12px;
-        z-index: -1;
-      }
+    &:hover {
+      text-decoration: underline;
     }
+  }
 
-    .text-container {
-      width: 60%;
-    }
+  .img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+    box-shadow: 0 0 5px 0 ${themeGet("colors.slate")};
+  }
+
+  p {
+    line-height: 28px;
   }
 
   ul.skills-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
+    grid-template-columns: repeat(auto-fill, 240px);
     padding: 0;
     margin: 20px 0 0 0;
     overflow: hidden;
@@ -95,26 +50,6 @@ export default component => styled(component)`
         color: ${themeGet("colors.yellow")};
         font-size: var(--fz-sm);
         line-height: 12px;
-      }
-    }
-  }
-
-  @media (max-width: ${themeGet("devices.sizes.medium")}px) {
-    max-width: unset;
-
-    .about {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-
-      .pic {
-        margin-top: 20px;
-        align-self: center;
-        width: 50%;
-      }
-
-      .text-container {
-        width: 100%;
       }
     }
   }

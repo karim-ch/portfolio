@@ -261,6 +261,12 @@ module.exports = {
                 label: "resume",
               },
             },
+            stackoverflow: {
+              type: "Link",
+              config: {
+                label: "stackoverflow",
+              },
+            },
           },
         },
       },

@@ -24,18 +24,25 @@ const useAbout = () => {
           twitter {
             url
           }
+          stackoverflow {
+            url
+          }
         }
       }
     }
   `)
 
-  const { resume, twitter, mail, github, instagram, linkedin } = get(
-    data,
-    "prismicConfig.data",
-    {}
-  )
+  const {
+    resume,
+    twitter,
+    mail,
+    github,
+    instagram,
+    linkedin,
+    stackoverflow,
+  } = get(data, "prismicConfig.data", {})
 
-  return { resume, twitter, mail, github, instagram, linkedin }
+  return { resume, twitter, mail, github, instagram, linkedin, stackoverflow }
 }
 
 export default useAbout

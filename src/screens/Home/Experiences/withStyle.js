@@ -7,12 +7,17 @@ export default component => styled(component)`
   max-width: 900px;
 
   .styled-tab-list {
-    width: max-content;
+    width: auto;
+    overflow: auto;
     list-style: none;
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
     padding: 0;
+  }
+
+  .styled-tab-list::-webkit-scrollbar {
+    height: 5px;
   }
 
   .styled-tab-button {
@@ -61,6 +66,11 @@ export default component => styled(component)`
     height: auto;
     padding-top: 10px;
     padding-left: 30px;
+    animation: appear 0.5s ease-in-out;
+
+    a {
+      color: ${themeGet("colors.yellow")};
+    }
 
     h3 {
       margin-bottom: 5px;
@@ -80,7 +90,20 @@ export default component => styled(component)`
     }
 
     .job-description {
-      max-width: 500px;
+      max-width: 600px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          &:before {
+            content: "▹";
+            margin-right: 13px;
+            color: ${themeGet("colors.yellow")};
+          }
+        }
+      }
     }
   }
 
@@ -99,6 +122,15 @@ export default component => styled(component)`
     }
     100% {
       transform: translate(0);
+    }
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0.3;
+    }
+    to {
+      opacity: 1;
     }
   }
 `
