@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
@@ -6,7 +6,7 @@ export default component => styled(component)`
   height: 100%;
   background-color: ${themeGet("colors.darkNavy")};
 
-  box-shadow: 0 10px 30px -15px ${themeGet("colors.navyShadow")};
+  //box-shadow: 0 10px 30px -15px ${themeGet("colors.navyShadow")};
   display: flex;
   flex-direction: column;
 
@@ -65,3 +65,9 @@ export default component => styled(component)`
     padding-bottom: 7px;
   }
 `
+
+// ${props =>
+//   themeGet("name")(props) === "light" &&
+//   css`
+//     background-color: ${themeGet("colors.navy")};
+// `}

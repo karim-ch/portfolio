@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
@@ -133,4 +133,12 @@ export default component => styled(component)`
       opacity: 1;
     }
   }
+
+  ${props =>
+    themeGet("name")(props) === "light" &&
+    css`
+      .styled-tab-button {
+        border-bottom: 2px solid ${themeGet("colors.lightGrey")};
+      }
+    `}
 `

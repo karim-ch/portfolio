@@ -4,7 +4,6 @@ import { themeGet } from "@styled-system/theme-get"
 export default component => styled(component)`
   display: flex;
   flex-direction: row;
-  box-shadow: rgba(2, 12, 27, 0.7) 0 1rem 1.5rem -1rem;
   height: 7rem;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +13,7 @@ export default component => styled(component)`
   top: 0;
   z-index: 2;
   background-color: ${themeGet("colors.navy")};
+  box-shadow: 0 4px 20px rgb(0 0 0 / 5%);
 
   .logo {
     padding: 0 3rem;
@@ -37,6 +37,7 @@ export default component => styled(component)`
       margin: 0 2rem;
       list-style: none;
       transition: all 0.3s;
+      font-weight: 600;
 
       &:hover {
         color: ${themeGet("colors.yellow")};
