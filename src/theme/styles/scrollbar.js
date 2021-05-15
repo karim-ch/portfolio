@@ -3,21 +3,21 @@ import { themeGet } from "@styled-system/theme-get"
 
 export default css`
   * {
-    scrollbar-color: ${themeGet("colors.darkNavy")};
-    ${themeGet("colors.lightestNavy")};
+    scrollbar-color: ${themeGet("colors.lightGrey")};
+    ${themeGet("colors.navy")};
     scrollbar-width: thin;
   }
 
   ::-webkit-scrollbar {
     width: 8px;
-    background-color: ${themeGet("colors.lightestNavy")};
+    background-color: ${themeGet("colors.navy")};
   }
 
   ::-webkit-scrollbar-track {
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${themeGet("colors.darkNavy")};
+    background-color: ${themeGet("colors.lightGrey")};
     border: 2px solid transparent;
     border-radius: 2px;
     background-clip: content-box;

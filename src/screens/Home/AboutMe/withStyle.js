@@ -21,7 +21,6 @@ export default component => styled(component)`
     border-radius: 50%;
     float: left;
     margin-right: 20px;
-    box-shadow: 0 0 5px 0 ${themeGet("colors.slate")};
   }
 
   p {

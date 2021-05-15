@@ -5,63 +5,72 @@ export default component => styled(component)`
   .drawer {
     background: ${themeGet("colors.darkNavy")};
     height: 100vh;
-    width: 60vw;
+    width: 100%;
     position: fixed;
-    z-index: 4;
+    z-index: 9;
     right: 0;
     top: 0;
     animation: appear 0.5s ease-in-out;
+    animation-fill-mode: both;
     font-size: var(--fz-lg);
+    text-align: -webkit-center;
 
     &--closing {
       animation: disappear 0.49s ease-in-out;
     }
 
-    .top {
-      padding: 2rem;
-
-      button {
-        float: right;
-        background: transparent;
-        border: none;
-
-        svg {
-          width: 2rem;
-          height: 2rem;
-          fill: ${themeGet("colors.white")};
-          &:hover {
-            fill: ${themeGet("colors.yellow")};
-          }
-        }
-      }
-    }
-
     .drawer-sections {
       list-style: none;
-      width: 100%;
-      height: 100%;
       padding: 0;
       text-align: center;
-      margin-top: 18vh;
+      margin-top: 12vh;
       text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
 
-      li {
-        margin: 3rem;
-        color: ${themeGet("colors.white")};
-        &:hover {
-          color: ${themeGet("colors.yellow")};
-        }
+      .menu {
+        color: ${themeGet("colors.lightGrey")};
+        letter-spacing: 1px;
+        font-size: var(--fz-sm);
       }
 
-      .resume-btn {
-        border: 1px solid ${themeGet("colors.yellow")};
-        color: ${themeGet("colors.yellow")};
-        border-radius: 0.4rem;
-        padding: 1.2rem 3.3rem;
+      .li {
+        margin: 1rem;
+        font-size: var(--fz-drawer-item);
+        font-weight: bold;
+        color: ${themeGet("colors.lightGrey")};
         transition: all 0.3s;
+        position: relative;
+        display: inline;
+
+        &--active {
+          color: ${themeGet("colors.navy")};
+          &:before {
+            content: "";
+            width: 10rem;
+            height: 1rem;
+            position: absolute;
+            top: 50%;
+            transform: translateX(-120%);
+            background-color: white;
+            animation: none !important;
+          }
+        }
 
         &:hover {
-          background-color: ${themeGet("colors.lightYellow")};
+          color: ${themeGet("colors.navy")};
+
+          &:before {
+            content: "";
+            width: 10rem;
+            height: 1rem;
+            position: absolute;
+            top: 50%;
+            transform: translateX(-120%);
+            background-color: white;
+            animation: left 1s;
+          }
         }
       }
     }
@@ -69,22 +78,37 @@ export default component => styled(component)`
 
   @keyframes appear {
     0% {
-      opacity: 0.5;
-      transform: translateX(30rem);
+      transform: translateY(100vh);
     }
     100% {
       transform: translate(0);
-      opacity: 1;
     }
   }
 
   @keyframes disappear {
     0% {
-      opacity: 1;
+      transform: translate(0);
     }
     100% {
-      opacity: 0.5;
-      transform: translateX(30rem);
+      transform: translateY(-100vh);
+    }
+  }
+
+  @keyframes left {
+    0% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-120%);
+    }
+  }
+
+  @keyframes right {
+    0% {
+      transform: translateX(-120%);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
 `

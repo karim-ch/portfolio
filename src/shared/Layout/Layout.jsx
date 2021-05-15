@@ -31,11 +31,10 @@ const Layout = ({ children, className }) => {
         <script src={withPrefix("script.js")} type="text/javascript" />
       </Helmet>
       <div className={className}>
-        {drawerVisible && isMobile && (
+        {drawerVisible && (
           <Drawer toggle={toggle} isDrawerBeingClosed={isDrawerBeingClosed} />
         )}
-        {drawerVisible && isMobile && <div className="overlay" />}
-        <Navbar toggle={toggle} />
+        <Navbar toggle={toggle} drawerVisible={drawerVisible} />
         <Main>{children}</Main>
         <Footer />
         {!isMobile && <Social />}

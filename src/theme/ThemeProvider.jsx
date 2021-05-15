@@ -16,7 +16,7 @@ export const getTheme = preference => ({
 const useThemeState = createPersistedState("theme")
 
 const defaults = {
-  name: "dark",
+  name: "light",
 }
 
 const ThemeProvider = ({ children, defaultTheme }) => {

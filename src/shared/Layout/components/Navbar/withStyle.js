@@ -7,92 +7,109 @@ export default component => styled(component)`
   height: 7rem;
   justify-content: space-between;
   align-items: center;
-  font-family: var(--font-mono);
-  font-size: var(--fz-xs);
+  font-family: var(--font-sans);
   position: sticky;
   top: 0;
-  z-index: 2;
-  background-color: ${themeGet("colors.navy")};
-  box-shadow: 0 4px 20px rgb(0 0 0 / 5%);
+  z-index: 10;
+  background-color: transparent;
 
   .logo {
     padding: 0 3rem;
-    svg {
-      width: 4.5rem;
-      height: 4.5rem;
-      fill: ${themeGet("colors.yellow")};
-      transition: all 0.5s;
-    }
-  }
-
-  .active {
-    color: ${themeGet("colors.yellow")};
-  }
-
-  .sections {
     display: flex;
     align-items: center;
+    transition: all 0.3s;
+    color: ${({ drawerVisible }) =>
+      drawerVisible ? themeGet("colors.lightGrey") : themeGet("colors.black")};
 
-    > * {
-      margin: 0 2rem;
-      list-style: none;
-      transition: all 0.3s;
-      font-weight: 600;
-
-      &:hover {
-        color: ${themeGet("colors.yellow")};
-      }
-
-      animation: appearFromTop 0.3s;
-      animation-fill-mode: both;
-
-      ${() =>
-        Array.from({ length: 8 }).map(
-          (_, i) => css`
-            &:nth-child(${i}) {
-              animation-delay: ${i / 10}s;
-            }
-          `
-        )}
-    }
-  }      
-    
-
-    .resume-btn {
-      border: 1px solid ${themeGet("colors.yellow")};
-      color: ${themeGet("colors.yellow")};
-      padding: 1rem;
-      border-radius: 0.4rem;
-      &:hover {
-        background-color: ${themeGet("colors.lightYellow")};
-      }
-    }
-
-    .burger {
-      background: none;
-      border: none;
-
+    &:hover {
+      color: ${({ drawerVisible }) =>
+        drawerVisible ? themeGet("colors.navy") : themeGet("colors.lightGrey")};
       svg {
-        width: 2.8rem;
-        height: 2.8rem;
-        fill: ${themeGet("colors.white")};
-        transition: all 0.3s;
+        fill: ${({ drawerVisible }) =>
+          drawerVisible
+            ? themeGet("colors.navy")
+            : themeGet("colors.lightGrey")};
+      }
+    }
 
-        &:hover {
-          fill: ${themeGet("colors.yellow")};
-        }
+    svg {
+      transition: all 0.3s;
+      width: 5.3rem;
+      height: 5.3rem;
+      fill: ${({ drawerVisible }) =>
+        drawerVisible
+          ? themeGet("colors.lightGrey")
+          : themeGet("colors.black")};
+    }
+
+    .me {
+      .name {
+        display: block;
+        letter-spacing: 0.9px;
+        font-size: var(--fz-lg);
+        font-weight: 600;
+      }
+      .job {
+        display: block;
+        letter-spacing: 1.2px;
+        font-size: var(--fz-xxs);
+        font-weight: 500;
       }
     }
   }
 
-  @keyframes appearFromTop {
-    0% {
-      transform: translateY(-20px);
-      opacity: 0;
+  .burger {
+    background: none;
+    border: none;
+    display: flex;
+    padding: 0 3rem;
+    align-items: center;
+    color: ${({ drawerVisible }) =>
+      drawerVisible ? themeGet("colors.lightGrey") : themeGet("colors.black")};
+
+    span {
+      font-weight: 600;
+      margin-right: 1rem;
+      letter-spacing: 1px;
+      transition: all 0.3s;
     }
-    100% {
-      opacity: 1;
-      transform: translate(0);
+
+    svg {
+      transition: all 0.3s;
+      width: 2.5rem;
+      height: 2.8rem;
+      fill: ${({ drawerVisible }) =>
+        drawerVisible
+          ? themeGet("colors.lightGrey")
+          : themeGet("colors.black")};
+    }
+
+    ${({ drawerVisible }) => {
+      return drawerVisible
+        ? css`
+            &:hover svg {
+              transform: rotate(90deg);
+            }
+          `
+        : css`
+            &:hover svg #top {
+              transform: translateY(-3rem);
+            }
+            &:hover svg #bottom {
+              transform: translateY(3rem);
+            }
+          `
+    }}
+
+    &:hover {
+      color: ${({ drawerVisible }) =>
+        drawerVisible ? themeGet("colors.navy") : themeGet("colors.lightGrey")};
+      svg {
+        fill: ${({ drawerVisible }) =>
+          drawerVisible
+            ? themeGet("colors.navy")
+            : themeGet("colors.lightGrey")};
+      }
     }
   }
 `

@@ -29,10 +29,9 @@ const globalStyles = createGlobalStyle`
     --fz-xxl: 2.2rem;
     --fz-heading: 3.2rem;
     --fz-description: 4rem;
+    --fz-drawer-item: 7rem;
     --fz-name: 8rem;
     
-    counter-reset: navbar;
-
     @media (max-width: ${themeGet("devices.sizes.medium")}px) {
       --fz-xxs: 1rem;
       --fz-xs: 1.1rem;
@@ -43,6 +42,7 @@ const globalStyles = createGlobalStyle`
       --fz-xxl: 2.0rem;
       --fz-heading: 3.0rem;
       --fz-description: 3rem;
+      --fz-drawer-item: 5rem;
       --fz-name: 6rem;
     }
   }

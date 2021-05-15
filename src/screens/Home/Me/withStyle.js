@@ -14,11 +14,6 @@ export default component => styled(component)`
     font-family: var(--font-sans);
     font-size: var(--fz-name);
     letter-spacing: 1.5px;
-
-    &:after {
-      content: ".";
-      color: ${themeGet("colors.yellow")};
-    }
   }
 
   .description {
