@@ -2,55 +2,47 @@ import styled from "styled-components"
 import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
-  margin-top: 10vh;
+  padding: 10vh 20% 0 20%;
+  min-height: 70vh;
 
-  .welcome {
-    color: ${themeGet("colors.yellow")};
-    font-family: var(--font-mono);
-  }
-
-  .name {
-    color: ${themeGet("colors.white")};
+  .me {
+    font-size: 50px;
     font-family: var(--font-sans);
-    font-size: var(--fz-name);
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+
+    span {
+      font-size: 58px;
+      font-weight: bold;
+    }
   }
 
-  .description {
+  .role {
+    font-weight: 700;
+    font-size: 85px;
+    font-family: var(--font-sans);
+    letter-spacing: 2px;
     color: ${themeGet("colors.slate")};
-    font-family: var(--font-mono);
-    font-size: var(--fz-description);
   }
 
-  p {
-    margin-top: 4rem !important;
-    max-width: 35vw;
+  .build {
+    font-weight: 700;
+    font-size: 85px;
+    font-family: var(--font-sans);
+    letter-spacing: 2px;
+    color: ${themeGet("colors.slate")};
   }
 
-  button {
-    border: 1px solid ${themeGet("colors.yellow")};
-    color: ${themeGet("colors.yellow")};
-    background-color: transparent;
-    padding: 2rem 4.2rem;
-    border-radius: 0.4rem;
-    font-family: var(--font-mono);
-    margin-top: 3rem;
-    transition: all 0.2s;
+  .container {
+    display: flex;
+    width: 100%;
 
-    &:hover {
-      background-color: ${themeGet("colors.lightYellow")};
-      transform: translateY(-1px);
-      box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.4);
-    }
-    &:active {
-      transform: translate(0);
-      box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.4);
-    }
-  }
-
-  @media (max-width: ${themeGet("devices.sizes.medium")}px) {
-    p {
-      max-width: 100%;
+    .right {
+      background: #f8f8f8;
+      border-radius: 50%;
+      height: 550px;
+      width: 550px;
     }
   }
 `

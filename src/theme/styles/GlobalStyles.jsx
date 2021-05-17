@@ -30,7 +30,7 @@ const globalStyles = createGlobalStyle`
     --fz-heading: 3.2rem;
     --fz-description: 4rem;
     --fz-drawer-item: 7rem;
-    --fz-name: 8rem;
+    --fz-name: 9rem;
     
     @media (max-width: ${themeGet("devices.sizes.medium")}px) {
       --fz-xxs: 1rem;

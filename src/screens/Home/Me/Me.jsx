@@ -1,30 +1,40 @@
-import React from "react"
+import React, { useCallback, useState } from "react"
 import withStyle from "./withStyle"
-import { genericHashLink } from "react-router-hash-link"
-import GatsbyLink from "gatsby-link"
-
-const HashLink = genericHashLink(GatsbyLink)
+import Scene from "../../../components/3d/Scene"
+import Laptop from "../../../components/3d/Laptop"
 
 const Me = ({ className }) => {
+  const [isRotating, setIsRotating] = useState(true)
+  // const [animation, setAnimation] = useState("empty")
+
+  // const enter = useCallback(param => {
+  //   setAnimation(param)
+  //   setIsRotating(false)
+  // }, [])
+
   return (
     <section className={className}>
-      <h3 className="welcome">Hi there ! my name is</h3>
-      <h1 className="name">Karim Chaari</h1>
-      <h2 className="description">
-        I'm a fullstack web developer{" "}
-        <span role="img" aria-label="developer">
-          🧑🏻‍💻
-        </span>
-      </h2>
-      <p>
-        I'm a Javascript software engineer. I'm specialized in designing and
-        building high quality scalable websites, applications, and anything in
-        between.
-      </p>
-
-      <HashLink to="/#about">
-        <button className="about_btn"> About me </button>
-      </HashLink>
+      <div className="container">
+        <div className="left">
+          <h3 className="me">
+            <span>Hey</span>, I'm Karim
+          </h3>
+          <h3
+            className="build"
+            // onMouseEnter={() => enter("build")}
+          >
+            I BUILD
+          </h3>
+          <h3 className="role">CREATIVE</h3>
+          <h3 className="role">UNIQUE</h3>
+          <h3 className="role">EXPERIENCES</h3>
+        </div>
+        <div className="right">
+          <Scene isRotating={isRotating}>
+            <Laptop />
+          </Scene>
+        </div>
+      </div>
     </section>
   )
 }

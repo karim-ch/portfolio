@@ -41,7 +41,7 @@ const Home = ({ className }) => {
       <Me />
       {sections.map(({ sectionName, Component }) => {
         return (
-          <section key={sectionName} id={sectionName}>
+          <section key={sectionName} id={sectionName} className="section">
             <VizSensor
               partialVisibility
               onChange={isVisible => isVisible && setPage(sectionName)}
