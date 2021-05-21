@@ -16,13 +16,12 @@ const Layout = ({ children, className }) => {
   const toggle = useCallback(() => {
     if (drawerVisible) {
       setDrawerBeingClosed(true)
-      setTimeout(() => {
+      return setTimeout(() => {
         setDrawerVisible(false)
         setDrawerBeingClosed(false)
       }, 500)
-    } else {
-      setDrawerVisible(true)
     }
+    setDrawerVisible(true)
   }, [drawerVisible])
 
   return (

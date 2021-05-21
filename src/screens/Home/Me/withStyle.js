@@ -5,17 +5,12 @@ export default component => styled(component)`
   padding: 10vh 20% 0 20%;
   min-height: 70vh;
 
-  .me {
+  .hey {
     font-size: 50px;
     font-family: var(--font-sans);
     letter-spacing: 2px;
     margin-bottom: 2rem;
-    font-weight: 500;
-
-    span {
-      font-size: 58px;
-      font-weight: bold;
-    }
+    font-weight: 600;
   }
 
   .role {
@@ -24,11 +19,42 @@ export default component => styled(component)`
     font-family: var(--font-sans);
     letter-spacing: 2px;
     color: ${themeGet("colors.slate")};
+    transition: all 0.7s;
+    position: relative;
+
+    &:hover {
+      -webkit-text-stroke: 1px ${themeGet("colors.slate")};
+      color: white;
+      transform: skewX(-10deg);
+
+      &:before {
+        content: "";
+        width: 45rem;
+        height: 1.6rem;
+        position: absolute;
+        bottom: 20px;
+        transform: translateX(-100%);
+        background-color: ${themeGet("colors.slate")};
+        animation: left 1s;
+        animation-fill-mode: both;
+        z-index: -1;
+      }
+    }
+
+    &--experiences {
+      &:hover {
+        &:before {
+          width: 61rem;
+        }
+      }
+    }
   }
 
   .build {
     font-weight: 700;
-    font-size: 85px;
+    font-size: 30px;
+    margin-top: 60px;
+    margin-bottom: 20px;
     font-family: var(--font-sans);
     letter-spacing: 2px;
     color: ${themeGet("colors.slate")};
@@ -43,6 +69,18 @@ export default component => styled(component)`
       border-radius: 50%;
       height: 550px;
       width: 550px;
+      clip-path: circle(50%);
+    }
+  }
+
+  @keyframes left {
+    0% {
+      opacity: 0.4;
+      transform: translateX(-50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) skewX(15deg);
     }
   }
 `

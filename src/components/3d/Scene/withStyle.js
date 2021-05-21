@@ -12,30 +12,32 @@ export default component => styled(component)`
   .scene {
     transform-style: preserve-3d;
 
-    ${({ isRotating }) => {
-      return (
-        isRotating &&
-        css`
-          animation: sceneRotate 10s linear infinite;
-        `
-      )
-    }}
+    ${({ animation }) =>
+      !animation
+        ? css`
+            animation: sceneRotate 10s linear infinite;
+          `
+        : css`
+            animation: rotateChange 0.9s both;
+          `}
+  }
 
-    animation-fill-mode: both;
+  @keyframes sceneRotate {
+    to {
+      transform: rotateY(360deg);
+    }
+  }
 
-    @keyframes sceneRotate {
-      to {
-        transform: rotateY(360deg);
-      }
+  @keyframes rotateChange {
+    0%,
+    100% {
+      transform: rotateY(30deg) translate(0);
+      animation-timing-function: ease-in;
     }
 
-    @keyframes enter {
-      from {
-        transform: rotateY(-150deg);
-      }
-      to {
-        transform: rotateY(30deg);
-      }
+    50% {
+      transform: rotateY(-200deg) translateY(40rem);
+      animation-timing-function: ease-out;
     }
   }
 `

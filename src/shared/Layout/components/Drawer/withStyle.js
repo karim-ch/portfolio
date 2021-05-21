@@ -1,82 +1,80 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
-  .drawer {
-    background: ${themeGet("colors.darkNavy")};
-    height: 100vh;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  animation: slideFromBottom 0.5s ease-in-out;
+  animation-fill-mode: both;
+  background-color: ${themeGet("colors.darkNavy")};
+  font-size: var(--fz-lg);
+
+  ${({ isDrawerBeingClosed }) =>
+    isDrawerBeingClosed &&
+    css`
+      animation: slideToTop 0.49s ease-in-out;
+    `}
+
+  .drawer-sections {
     width: 100%;
-    position: fixed;
-    z-index: 9;
-    right: 0;
-    top: 0;
-    animation: appear 0.5s ease-in-out;
-    animation-fill-mode: both;
-    font-size: var(--fz-lg);
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 18vh;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
     text-align: -webkit-center;
 
-    &--closing {
-      animation: disappear 0.49s ease-in-out;
+    .menu {
+      color: ${themeGet("colors.lightGrey")};
+      letter-spacing: 1px;
+      font-size: var(--fz-sm);
     }
 
-    .drawer-sections {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-      margin-top: 12vh;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      width: fit-content;
+    .li {
+      margin: 1rem;
+      font-size: var(--fz-drawer-item);
+      font-weight: bold;
+      color: ${themeGet("colors.lightGrey")};
+      transition: all 0.3s;
+      position: relative;
+      display: inline;
 
-      .menu {
-        color: ${themeGet("colors.lightGrey")};
-        letter-spacing: 1px;
-        font-size: var(--fz-sm);
+      &--active {
+        color: ${themeGet("colors.navy")};
+        &:before {
+          content: "";
+          width: 10rem;
+          height: 1rem;
+          position: absolute;
+          top: 50%;
+          transform: translateX(-120%);
+          background-color: white;
+          animation: none !important;
+        }
       }
 
-      .li {
-        margin: 1rem;
-        font-size: var(--fz-drawer-item);
-        font-weight: bold;
-        color: ${themeGet("colors.lightGrey")};
-        transition: all 0.3s;
-        position: relative;
-        display: inline;
-
-        &--active {
-          color: ${themeGet("colors.navy")};
-          &:before {
-            content: "";
-            width: 10rem;
-            height: 1rem;
-            position: absolute;
-            top: 50%;
-            transform: translateX(-120%);
-            background-color: white;
-            animation: none !important;
-          }
-        }
-
-        &:hover {
-          color: ${themeGet("colors.navy")};
-
-          &:before {
-            content: "";
-            width: 10rem;
-            height: 1rem;
-            position: absolute;
-            top: 50%;
-            transform: translateX(-120%);
-            background-color: white;
-            animation: left 1s;
-          }
+      &:hover {
+        color: ${themeGet("colors.navy")};
+        &:before {
+          content: "";
+          width: 10rem;
+          height: 1rem;
+          position: absolute;
+          top: 50%;
+          transform: translateX(-120%);
+          background-color: white;
+          animation: left 1s;
         }
       }
     }
   }
 
-  @keyframes appear {
+  @keyframes slideFromBottom {
     0% {
       transform: translateY(100vh);
     }
@@ -85,7 +83,7 @@ export default component => styled(component)`
     }
   }
 
-  @keyframes disappear {
+  @keyframes slideToTop {
     0% {
       transform: translate(0);
     }
@@ -100,15 +98,6 @@ export default component => styled(component)`
     }
     100% {
       transform: translateX(-120%);
-    }
-  }
-
-  @keyframes right {
-    0% {
-      transform: translateX(-120%);
-    }
-    100% {
-      transform: translateX(0);
     }
   }
 `

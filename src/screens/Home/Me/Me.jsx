@@ -1,38 +1,31 @@
-import React, { useCallback, useState } from "react"
+import React, { useState } from "react"
 import withStyle from "./withStyle"
 import Scene from "../../../components/3d/Scene"
-import Laptop from "../../../components/3d/Laptop"
 
 const Me = ({ className }) => {
-  const [isRotating, setIsRotating] = useState(true)
-  // const [animation, setAnimation] = useState("empty")
-
-  // const enter = useCallback(param => {
-  //   setAnimation(param)
-  //   setIsRotating(false)
-  // }, [])
+  const [animation, setAnimation] = useState()
 
   return (
     <section className={className}>
       <div className="container">
         <div className="left">
-          <h3 className="me">
-            <span>Hey</span>, I'm Karim
+          <h3 className="hey">Hey there !</h3>
+          <h3 className="build">I'm Karim, and I create </h3>
+          <h3 className="role " onMouseEnter={() => setAnimation("build")}>
+            CREATIVE
+          </h3>
+          <h3 className="role" onMouseEnter={() => setAnimation("unique")}>
+            UNIQUE
           </h3>
           <h3
-            className="build"
-            // onMouseEnter={() => enter("build")}
+            className="role role--experiences"
+            onMouseEnter={() => setAnimation("experience")}
           >
-            I BUILD
+            EXPERIENCES
           </h3>
-          <h3 className="role">CREATIVE</h3>
-          <h3 className="role">UNIQUE</h3>
-          <h3 className="role">EXPERIENCES</h3>
         </div>
         <div className="right">
-          <Scene isRotating={isRotating}>
-            <Laptop />
-          </Scene>
+          <Scene animation={animation} />
         </div>
       </div>
     </section>
