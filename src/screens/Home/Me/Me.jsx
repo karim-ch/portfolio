@@ -14,7 +14,10 @@ const Me = ({ className }) => {
           <h3 className="role " onMouseEnter={() => setAnimation("build")}>
             CREATIVE
           </h3>
-          <h3 className="role" onMouseEnter={() => setAnimation("unique")}>
+          <h3
+            className="role role--unique"
+            onMouseEnter={() => setAnimation("unique")}
+          >
             UNIQUE
           </h3>
           <h3
