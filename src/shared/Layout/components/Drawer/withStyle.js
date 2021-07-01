@@ -4,7 +4,7 @@ import { themeGet } from "@styled-system/theme-get"
 export default component => styled(component)`
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 9;
   top: 0;
   animation: slideFromBottom 0.5s ease-in-out;
