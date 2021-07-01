@@ -35,7 +35,9 @@ export default component => styled(component)`
     }
 
     > p {
-      background-color: ${themeGet("colors.darkNavy")};
+      background-color: ${themeGet("colors.navy")};
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+
       padding: 20px;
       width: 120%;
       z-index: 1;

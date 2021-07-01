@@ -1,14 +1,13 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { themeGet } from "@styled-system/theme-get"
 
 export default component => styled(component)`
   width: 100%;
   height: 100%;
-  background-color: ${themeGet("colors.darkNavy")};
-
-  //box-shadow: 0 10px 30px -15px ${themeGet("colors.navyShadow")};
+  background-color: ${themeGet("colors.navy")};
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 
   a {
     text-decoration: none;
